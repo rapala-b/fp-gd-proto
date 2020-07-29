@@ -47,22 +47,24 @@
      <Compile Include="Assets\Elephant\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
      <Compile Include="Assets\Elephant\Scripts\ElephantBehavior.cs" />
      <Compile Include="Assets\Elephant\Scripts\ParticleTriggers.cs" />
-     <Compile Include="Assets\FurnishedCabin\Scripts\MoveObjectController.cs" />
-     <Compile Include="Assets\FurnishedCabin\Scripts\MoveableObject.cs" />
-     <Compile Include="Assets\JunkoChan\Scripts\JunkochanCamControl.cs" />
-     <Compile Include="Assets\JunkoChan\Scripts\JunkochanControl.cs" />
+     <Compile Include="Assets\Imports\3DTOYS\rotatecamera.cs" />
+     <Compile Include="Assets\Imports\FurnishedCabin\Scripts\MoveObjectController.cs" />
+     <Compile Include="Assets\Imports\FurnishedCabin\Scripts\MoveableObject.cs" />
+     <Compile Include="Assets\Imports\JunkoChan\Scripts\JunkochanCamControl.cs" />
+     <Compile Include="Assets\Imports\JunkoChan\Scripts\JunkochanControl.cs" />
      <Compile Include="Assets\Scripts\BreakableObject.cs" />
      <Compile Include="Assets\Scripts\CageButton.cs" />
      <Compile Include="Assets\Scripts\EnemyBehavior.cs" />
      <Compile Include="Assets\Scripts\PlayerBehavior.cs" />
      <Compile Include="Assets\Scripts\PlayerCamera.cs" />
-     <None Include="Assets\JunkoChan\Readme (English and Japanese).txt" />
-     <None Include="Assets\Bed &amp; Bath Furniture Pack\Documentation.txt" />
-     <None Include="Assets\Interior Asset\README.txt" />
+     <None Include="Assets\Imports\JunkoChan\Readme (English and Japanese).txt" />
+     <None Include="Assets\Imports\Bed &amp; Bath Furniture Pack\Documentation.txt" />
+     <None Include="Assets\Imports\Interior Asset\README.txt" />
      <None Include="Assets\Elephant\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
-     <None Include="Assets\Interior Asset\Source\InteriorPlant\Cactus\Flower\Materials\Double Sided Transparent Diffuse Bump Cutout.shader" />
-     <None Include="Assets\Interior Asset\Source\InteriorPlant\Grass\Materials\Double Sided Transparent Diffuse Bump Cutout.shader" />
+     <None Include="Assets\Imports\Interior Asset\Source\InteriorPlant\Cactus\Flower\Materials\Double Sided Transparent Diffuse Bump Cutout.shader" />
+     <None Include="Assets\Imports\Interior Asset\Source\InteriorPlant\Grass\Materials\Double Sided Transparent Diffuse Bump Cutout.shader" />
      <None Include="Assets\Elephant\PyroParticles\Readme.txt" />
+     <None Include="Assets\Imports\3DTOYS\readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
