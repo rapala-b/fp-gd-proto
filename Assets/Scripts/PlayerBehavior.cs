@@ -55,6 +55,7 @@ public class PlayerBehavior : MonoBehaviour
         }
         else 
         {
+            // Player is in air
             moveVector.x = lateralMove.x * airspeed / speed;
             moveVector.z = lateralMove.z * airspeed / speed;
         }

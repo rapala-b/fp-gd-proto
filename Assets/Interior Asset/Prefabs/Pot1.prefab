@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4950596310475004}
   - component: {fileID: 33067868470398982}
   - component: {fileID: 23533626751538704}
+  - component: {fileID: 9026124746122673379}
   m_Layer: 0
   m_Name: Pot
   m_TagString: Untagged
@@ -111,6 +112,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &9026124746122673379
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270570019200250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: a2eee9005c521a742a1445bc0f7611b6, type: 3}
 --- !u!1 &1759953274031662
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +137,7 @@ GameObject:
   - component: {fileID: 4751214727866208}
   - component: {fileID: 33478067370136126}
   - component: {fileID: 23254335244898050}
+  - component: {fileID: 557517670907876219}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -190,3 +206,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &557517670907876219
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759953274031662}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: a9dac368b7013164c80b90e65f3ba55a, type: 3}
