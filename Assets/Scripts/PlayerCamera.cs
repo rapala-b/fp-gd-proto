@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+
 
 public class PlayerCamera : MonoBehaviour
 {
@@ -12,6 +14,11 @@ public class PlayerCamera : MonoBehaviour
     public float senseVertical = 0.5f;
     public static float horizontal = 0;
     public static float vertical = 0;
+
+    public Text inspectBox;
+    public float inspectFadeTime = 8;
+
+    float inspectTimer;
     
 
     Vector3 relativePos;
@@ -55,5 +62,32 @@ public class PlayerCamera : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(vertical, currentRota.y, currentRota.z);
 
+    }
+
+    void HandleInspect()
+    {
+        if (inspectBox.enabled) {inspectTimer += Time.deltaTime;}
+        if (inspectTimer > inspectFadeTime) 
+        { 
+            inspectBox.enabled = false;
+            inspectTimer = 0;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Vector3 inspectStart = transform.position + (transform.forward * 2);
+            if (Physics.Raycast(inspectStart, transform.forward, out hit, 15))
+            {
+                Inspectable maybeInteract = hit.collider.GetComponent<Inspectable>();
+                if (maybeInteract != null)
+                {
+                    inspectTimer = 0;
+                    inspectBox.enabled = true;
+                    inspectBox.text = maybeInteract.description;
+                }
+            }
+            
+        }
     }
 }
