@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\BreakableObject.cs" />
      <Compile Include="Assets\Scripts\CageButton.cs" />
      <Compile Include="Assets\Scripts\EnemyBehavior.cs" />
+     <Compile Include="Assets\Scripts\EnemyStationary.cs" />
      <Compile Include="Assets\Scripts\PlayerBehavior.cs" />
      <Compile Include="Assets\Scripts\PlayerCamera.cs" />
      <None Include="Assets\Imports\JunkoChan\Readme (English and Japanese).txt" />
