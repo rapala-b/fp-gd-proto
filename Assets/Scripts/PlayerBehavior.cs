@@ -8,12 +8,14 @@ public class PlayerBehavior : MonoBehaviour
     public float airspeed = 10;
     public float jumpHeight = 5;
     public float gravity = 9.8f;
-    public int[] health = {3, 3};
+    public int health = 3;
+    // animals now get recalled upon damage
+    //public int[] health = {3, 3};
     public int[] status = {1, 0};
     public int activeChar = 0;
     public GameObject[] chars = {null, null};
 
-    public PlayerCamera playerCamera;
+    PlayerCamera playerCamera;
 
     CharacterController controller;
     Vector3 moveVector;
@@ -38,8 +40,8 @@ public class PlayerBehavior : MonoBehaviour
         if (Input.GetKeyDown("f")) { SwitchControl((activeChar + 1) % 2); }
         if (Input.GetKeyDown("r")) { Recall(); }
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        float moveHorizontal = Input.GetAxis("Horizontal") * Time.deltaTime;
+        float moveVertical = Input.GetAxis("Vertical") * Time.deltaTime;
 
         Vector3 lateralMove = new Vector3(moveHorizontal, 0.0f, moveVertical).normalized * speed;
         lateralMove = Quaternion.Euler(0, PlayerCamera.horizontal, 0) * lateralMove;
@@ -66,7 +68,7 @@ public class PlayerBehavior : MonoBehaviour
 
     void SwitchControl(int target) 
     {
-        if (activeChar != target & health[target] > 0)
+        if (activeChar != target)
         {
             if (status[target] == 0) 
             { 
@@ -94,9 +96,15 @@ public class PlayerBehavior : MonoBehaviour
 
     void Damage(int target)
     {
-        health[target] -= 1;
-        if (health[target] <= 0) {
-
+        if (target == 0)
+        {
+            health --;
+            if (health <= 0) { }
+        }
+        else 
+        {
+            chars[activeChar].SetActive(false);
+            activeChar = 0;
         }
     }
 }
