@@ -7,65 +7,108 @@ public class EnemyBehavior : MonoBehaviour
     public float moveSpeed = 3f;
     public Transform target;
     public float attackRange = 0;
+    public float chaseDistance = 3;
     public int attackDamage = 1;
     public float timeBetweenAttacks = 2f;
 
-    public Transform[] patrolPoint;
+    public Transform[] patrolPoints;
+    int patrolPointIndex = 0;
+
+    Vector3 nextDestination;
+    float distanceToPlayer;
+    Animator anim;
+    BehaviorState currentState;
+
+    public enum BehaviorState
+    {
+        Idle,
+        Patrol,
+        Chase,
+        Attack
+    }
 
     public float visionRange = 50;
-    int pointNum = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         if(target == null) {
             target = GameObject.FindGameObjectWithTag("Player").transform;
         }
+        anim = GetComponent<Animator>();
+        currentState = BehaviorState.Patrol;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, target.position);
-        bool playerInTerritory = false;
-        if(distance < visionRange) {
-            playerInTerritory = true;
-        }
+        distanceToPlayer = Vector3.Distance(transform.position, target.position);
 
-        if(playerInTerritory) {
-            MoveToPlayer();
-        }
-        else {
-            Patrol();
+        switch(currentState)
+        {
+            case BehaviorState.Patrol:
+                Patrol();
+                break;
+            case BehaviorState.Chase:
+                MoveToPlayer();
+                break;
+            case BehaviorState.Attack:
+                Attack();
+                break;
         }
     }
 
     void Patrol() {
-        Transform targetPoint = patrolPoint[pointNum];
 
-        float step = moveSpeed * Time.deltaTime;
-        float distance = Vector3.Distance(transform.position, targetPoint.position);
-        if(distance > 0) {
-            transform.LookAt(targetPoint);
-            transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, step);
+        //Update Animation State
+        anim.SetInteger("animState", 1);
+
+        if (Vector3.Distance(transform.position, nextDestination) <= 1)
+        {
+            FindNextPoint();
         }
-        else {
-            pointNum++;
-            pointNum %= patrolPoint.Length;
+        else if (distanceToPlayer <= chaseDistance)
+        {
+            currentState = BehaviorState.Chase;
         }
+
+        FaceTarget(nextDestination);
+        transform.position = Vector3.MoveTowards(transform.position, nextDestination, moveSpeed * Time.deltaTime);
     }
 
     void MoveToPlayer() {
-        float step = moveSpeed * Time.deltaTime;
-        float distance = Vector3.Distance(transform.position, target.position);
-        if(distance > attackRange) {
-            transform.LookAt(target);
-            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+
+        anim.SetInteger("animState", 2);
+        nextDestination = target.transform.position;
+
+        if (distanceToPlayer <= attackRange)
+        {
+            currentState = BehaviorState.Attack;
         }
-        else {
-            Attack();
+        else if (distanceToPlayer > chaseDistance)
+        {
+            currentState = BehaviorState.Patrol;
         }
+
+        FaceTarget(nextDestination);
+        transform.position = Vector3.MoveTowards(transform.position, nextDestination, moveSpeed * Time.deltaTime);
     }
     void Attack() {
 
+    }
+
+    void FindNextPoint()
+    {
+        nextDestination = patrolPoints[patrolPointIndex].transform.position;
+
+        patrolPointIndex = (patrolPointIndex + 1) % patrolPoints.Length;
+    }
+
+    void FaceTarget(Vector3 target)
+    {
+        Vector3 directionToTarget = (target - transform.position).normalized;
+        directionToTarget.y = 0;
+        Quaternion lookRotation = Quaternion.LookRotation(directionToTarget);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 10 * Time.deltaTime);
     }
 }
