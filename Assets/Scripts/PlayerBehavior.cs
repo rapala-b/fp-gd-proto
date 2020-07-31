@@ -99,7 +99,9 @@ public class PlayerBehavior : MonoBehaviour
         if (target == 0)
         {
             health --;
-            if (health <= 0) { }
+            if (health <= 0) { 
+                FindObjectOfType<LevelManager>().LevelLost();
+            }
         }
         else 
         {

@@ -30,4 +30,10 @@ public class ElephantBehavior : MonoBehaviour
         timer += Time.deltaTime;
         
     }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit) {
+        if (hit.gameObject.CompareTag("Box")) {
+            Destroy(hit.gameObject);
+        }
+    }
 }

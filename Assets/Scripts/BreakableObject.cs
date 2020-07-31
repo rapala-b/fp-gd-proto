@@ -12,11 +12,9 @@ public class BreakableObject : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Trigger entered");
         if (other.tag == "Pet1") {
-            if (Input.GetKeyDown("e"))
-            {
-                GameObject.Destroy(gameObject);
-            }
+            //GameObject.Destroy(gameObject);
         }
     }
 }

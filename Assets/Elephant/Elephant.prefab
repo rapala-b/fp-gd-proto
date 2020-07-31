@@ -776,7 +776,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4429843852643458991}
-  - component: {fileID: 4429843852652982343}
   - component: {fileID: 4429843851066082727}
   - component: {fileID: 4429843851066082726}
   m_Layer: 0
@@ -806,25 +805,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &4429843852652982343
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4429843852643615631}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 9e9c8c5bbda655a48b36b528b5561630, type: 3}
-  m_Controller: {fileID: 9100000, guid: af472812a384a2d4582ffde45dfb0e89, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!143 &4429843851066082727
 CharacterController:
   m_ObjectHideFlags: 0
@@ -837,12 +817,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 0.13
-  m_Radius: 0.06
+  m_Radius: 0.09
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.02, z: 0}
+  m_Center: {x: 0, y: 0, z: 0.02}
 --- !u!114 &4429843851066082726
 MonoBehaviour:
   m_ObjectHideFlags: 0
