@@ -81,7 +81,7 @@
     <Compile Include="Assets\Imports\JunkoChan\Scripts\JunkochanControl.cs" />
     <Compile Include="Assets\Scripts\BreakableObject.cs" />
     <Compile Include="Assets\Scripts\CageButton.cs" />
-    <Compile Include="Assets\Scripts\EnemyBehavior.cs" />
+    <Compile Include="Assets\Scripts\CandyBehavior.cs" />
     <Compile Include="Assets\Scripts\EnemyStationary.cs" />
     <Compile Include="Assets\Scripts\Inspectable.cs" />
     <Compile Include="Assets\Scripts\PlayerBehavior.cs" />

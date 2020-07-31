@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: c5104ec16228af94fafa1d0311ae7f40
+=======
+guid: 0dbe136ea98d97d4cb5a220cbb1c65be
+>>>>>>> replace-stickers-with-candy
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
