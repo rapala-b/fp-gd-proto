@@ -38,7 +38,7 @@ public class PlayerBehavior : MonoBehaviour
      void Update()
     {
         // only toggles between 0 and 1 for now
-        if (Input.GetKeyDown("f")) { SwitchControl((activeChar + 1) % 2); }
+        if (Input.GetKeyDown("f") & canSwitch) { SwitchControl((activeChar + 1) % 2); }
         if (Input.GetKeyDown("r") & canSwitch) { Recall(); }
 
         float moveHorizontal = Input.GetAxis("Horizontal") * Time.deltaTime;
