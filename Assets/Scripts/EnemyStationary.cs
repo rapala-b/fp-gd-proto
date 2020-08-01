@@ -23,7 +23,7 @@ public class EnemyStationary : MonoBehaviour
 
     // 1=+z, 2=+x, 3=-z, 4=-x;
     public float[] lookCycle = {0, 180}; 
-
+    public AudioClip alertSFX;
     PlayerBehavior pb;
 
     // 0=stationed, 1=chasing, 2=chase reorient, 3=searching, 4=returning
@@ -103,6 +103,7 @@ public class EnemyStationary : MonoBehaviour
         {
             state = 1;
             lookCounter = 0; 
+            AudioSource.PlayClipAtPoint(alertSFX, transform.position);
         }
     }
 
@@ -193,6 +194,7 @@ public class EnemyStationary : MonoBehaviour
         }
         if (CanSeePlayer())
         {
+            AudioSource.PlayClipAtPoint(alertSFX, transform.position);
             state = 1;
         }
 
@@ -204,6 +206,7 @@ public class EnemyStationary : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, patrolPoint, moveSpeed);
         if (CanSeePlayer())
         {
+            AudioSource.PlayClipAtPoint(alertSFX, transform.position);
             state = 1;
         }
         if ((transform.position - patrolPoint).magnitude < 0.5f)
