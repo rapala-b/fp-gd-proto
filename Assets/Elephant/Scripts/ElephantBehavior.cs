@@ -7,8 +7,8 @@ public class ElephantBehavior : MonoBehaviour
     public Transform waterSprayPoint;
 
     public GameObject waterParticle;
-
-    float sprayCountDown = 0.1f;
+    public AudioClip waterSFX;
+    float sprayCountDown = 0.5f;
     float timer = 0f;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,7 @@ public class ElephantBehavior : MonoBehaviour
         
         if(Input.GetButton("Fire1")) {
             if(timer >= sprayCountDown) {
+                AudioSource.PlayClipAtPoint(waterSFX, transform.position);
                 GameObject water = Instantiate(waterParticle, waterSprayPoint.position, waterParticle.transform.rotation) as GameObject;
                 Destroy(water, 3f);
                 timer = 0f;
