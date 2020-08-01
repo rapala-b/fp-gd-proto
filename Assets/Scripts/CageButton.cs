@@ -24,6 +24,7 @@ public class CageButton : MonoBehaviour
             done = true;
             pressed += 1;
             if (pressed == 3) {
+                playerBehavior.canSwitch = true;
                 GameObject.Destroy(GameObject.FindGameObjectWithTag("Cage"));
             }
         }
