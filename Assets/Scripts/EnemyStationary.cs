@@ -7,6 +7,7 @@ using UnityEngine;
 public class EnemyStationary : MonoBehaviour
 {
     public Vector3 patrolPoint;
+    public AudioClip alertSound;
 
     // vision will be a isosceles triangle with height = viewRange
 
@@ -101,6 +102,7 @@ public class EnemyStationary : MonoBehaviour
         }
         if (CanSeePlayer())
         {
+            AudioSource.PlayClipAtPoint(alertSound, transform.position);
             state = 1;
             lookCounter = 0; 
         }
@@ -193,6 +195,7 @@ public class EnemyStationary : MonoBehaviour
         }
         if (CanSeePlayer())
         {
+            AudioSource.PlayClipAtPoint(alertSound, transform.position);
             state = 1;
         }
 
@@ -204,6 +207,7 @@ public class EnemyStationary : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, patrolPoint, moveSpeed);
         if (CanSeePlayer())
         {
+            AudioSource.PlayClipAtPoint(alertSound, transform.position);
             state = 1;
         }
         if ((transform.position - patrolPoint).magnitude < 0.5f)

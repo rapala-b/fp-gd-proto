@@ -5,6 +5,7 @@ using UnityEngine;
 public class CageButton : MonoBehaviour
 {
     public static int pressed = 0;
+    public AudioClip buttonSound;
 
     bool done = false;
 
@@ -20,9 +21,10 @@ public class CageButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("e") & playerBehavior.activeChar == 1 & !done & (playerBehavior.chars[playerBehavior.activeChar].transform.position - transform.position).magnitude < 3){
+        if (Input.GetKeyDown("e") & playerBehavior.activeChar == 0 & !done & (playerBehavior.chars[playerBehavior.activeChar].transform.position - transform.position).magnitude < 3){
             done = true;
             pressed += 1;
+            AudioSource.PlayClipAtPoint(buttonSound, transform.position);
             if (pressed == 3) {
                 playerBehavior.canSwitch = true;
                 GameObject.Destroy(GameObject.FindGameObjectWithTag("Cage"));
