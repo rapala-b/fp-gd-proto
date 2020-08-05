@@ -8,12 +8,14 @@ public class ElephantBehavior : MonoBehaviour
 
     public GameObject waterParticle;
 
-    float sprayCountDown = 0.1f;
+    float sprayCountDown = 0.5f;
     float timer = 0f;
+
+    int shotNum = 3;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,10 +23,11 @@ public class ElephantBehavior : MonoBehaviour
     {
         
         if(Input.GetButton("Fire1")) {
-            if(timer >= sprayCountDown) {
-                GameObject water = Instantiate(waterParticle, waterSprayPoint.position, waterParticle.transform.rotation) as GameObject;
+            if(timer >= sprayCountDown && shotNum > 0) {
+                GameObject water = Instantiate(waterParticle, waterSprayPoint.position, transform.rotation) as GameObject;
                 Destroy(water, 3f);
                 timer = 0f;
+                shotNum--;
             }
         }
         timer += Time.deltaTime;
