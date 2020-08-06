@@ -30,6 +30,14 @@ public class ElephantBehavior : MonoBehaviour
                 shotNum--;
             }
         }
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.01f)) {
+            if(hit.transform.CompareTag("WaterSource")) {
+                shotNum = 3;
+            }
+        }
+            
+
         timer += Time.deltaTime;
         
     }
@@ -39,4 +47,5 @@ public class ElephantBehavior : MonoBehaviour
             Destroy(hit.gameObject);
         }
     }
+
 }
