@@ -1,9 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CatBehavior : MonoBehaviour
 {
+    public float attackRange = 0.5f;
+    public Transform catEye;
     Animator anim;
     CharacterController controller;
     // Start is called before the first frame update
@@ -21,6 +23,12 @@ public class CatBehavior : MonoBehaviour
         }
     }
     void Attack() {
+        RaycastHit hit;
         
+        if(Physics.Raycast(transform.position, catEye.forward, out hit, attackRange)) {
+            if(hit.transform.gameObject.GetComponent<EnemyStationary>() != null) {
+                hit.transform.gameObject.GetComponent<EnemyStationary>().Stun();
+            }
+        }
     }
 }
