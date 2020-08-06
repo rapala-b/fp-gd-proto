@@ -11,12 +11,14 @@ public class PlayerBehavior : MonoBehaviour
     public int health = 3;
     // animals now get recalled upon damage
     //public int[] health = {3, 3};
-    public int[] status = {1, 0};
+    public int[] status = {1, -1, -1, -1};
     public int activeChar = 0;
     public GameObject[] chars = {null, null};
     public bool canSwitch = false;
+    public CharPanel charPanel;
 
     PlayerCamera playerCamera;
+    
 
     CharacterController controller;
     Vector3 moveVector;
@@ -65,7 +67,7 @@ public class PlayerBehavior : MonoBehaviour
         moveVector.y -= gravity * Time.deltaTime;
 
         if (Mathf.Abs(moveVector.x) + Mathf.Abs(moveVector.z) > 0.1f){
-            controller.transform.LookAt(new Vector3(transform.position.x + moveVector.x, transform.position.y, transform.position.z + moveVector.z));
+            controller.transform.LookAt(new Vector3(controller.transform.position.x + moveVector.x, controller.transform.position.y, controller.transform.position.z + moveVector.z));
         }
             
         controller.Move(moveVector * Time.deltaTime);
@@ -85,6 +87,7 @@ public class PlayerBehavior : MonoBehaviour
             activeChar = target;
             controller = chars[target].GetComponent<CharacterController>();
         }
+        charPanel.UpdatePanels();
     }
 
     void Recall()
@@ -93,10 +96,15 @@ public class PlayerBehavior : MonoBehaviour
         {
             for (int i = 1; i < status.Length; i++ )
             {
-                chars[i].SetActive(false);
-                status[i] = 0;
+                if (status[i] == 1)
+                {
+                    chars[i].SetActive(false);
+                    status[i] = 0;
+                }
             }
         }
+
+        charPanel.UpdatePanels();
     }
 
     void Damage(int target)
@@ -113,5 +121,7 @@ public class PlayerBehavior : MonoBehaviour
             chars[activeChar].SetActive(false);
             activeChar = 0;
         }
+
+        charPanel.UpdatePanels();
     }
 }

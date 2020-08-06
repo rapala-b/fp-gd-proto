@@ -9,17 +9,17 @@ public class EnemyStationary : MonoBehaviour
     public Vector3 patrolPoint;
     public AudioClip alertSound;
 
-    // vision will be a isosceles triangle with height = viewRange
+    // vision will be a cone of length viewRange and angle viewAngle
 
     public float viewRange;
     public float viewAngle;
-    public float viewHeight;
     public float moveSpeed;
 
     // all time measured in number of ticks of AIUpdate
 
     public int lookTime;
     public int searchTime;
+    public int stunTime;
     
 
     // 1=+z, 2=+x, 3=-z, 4=-x;
@@ -27,30 +27,28 @@ public class EnemyStationary : MonoBehaviour
 
     PlayerBehavior pb;
 
-    // 0=stationed, 1=chasing, 2=chase reorient, 3=searching, 4=returning
+    // 0=stationed, 1=chasing, 2=chase reorient, 3=searching, 4=returning, 5=stunned;
     int state;
 
     int currentLook = 0;
-    int lookCounter = 0;
-    int searchCounter = 0;
+    int counter = 0;
 
     // vertices of the view triangle relative to current position, counterclockwise
-    Vector2[] triangle = {Vector2.zero, Vector2.zero, Vector2.zero};
+    // Vector2[] triangle = {Vector2.zero, Vector2.zero, Vector2.zero};
     Vector3 lastPos;
-    float angle;
+    //float angle;
 
     // Start is called before the first frame update
     void Start()
     {
         transform.position = patrolPoint;
-        angle = (180 - viewAngle) / 2 * Mathf.Deg2Rad;
+        //angle = (180 - viewAngle) / 2 * Mathf.Deg2Rad;
         currentLook = 0;
-        searchCounter = 0;
-        lookCounter = 0;
+        counter = 0;
 
-        triangle[0] = new Vector2(0, 0);
-        triangle[1] = new Vector2(viewRange / Mathf.Tan(angle), viewRange);
-        triangle[2] = new Vector2(-1 * viewRange / Mathf.Tan(angle), viewRange);
+        //triangle[0] = new Vector2(0, 0);
+        //triangle[1] = new Vector2(viewRange / Mathf.Tan(angle), viewRange);
+        //triangle[2] = new Vector2(-1 * viewRange / Mathf.Tan(angle), viewRange);
 
         pb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehavior>();
 
@@ -85,15 +83,19 @@ public class EnemyStationary : MonoBehaviour
         {
             ReturnToStation();
         }
+        else if (state == 5)
+        {
+            Stunned();
+        }
     }
 
     void Stationed()
     {
-        lookCounter ++;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(new Vector3(0, lookCycle[currentLook], 0)), 10);
-        if (lookCounter > lookTime)
+        counter ++;
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(new Vector3(0, lookCycle[currentLook], 0)), 5);
+        if (counter > lookTime)
         {
-            lookCounter = 0;
+            counter = 0;
             currentLook = (currentLook + 1) % lookCycle.Length;
 
             // will eventually need a second counter for lerping between rotations
@@ -104,7 +106,7 @@ public class EnemyStationary : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(alertSound, transform.position);
             state = 1;
-            lookCounter = 0; 
+            counter = 0; 
         }
     }
 
@@ -116,22 +118,24 @@ public class EnemyStationary : MonoBehaviour
     bool CanSeePlayer()
     {
         Vector3 targetPoint = pb.chars[pb.activeChar].transform.position;
-        Vector3 pointConvert = transform.InverseTransformPoint(targetPoint);
+        Vector3 posDifference = targetPoint - transform.position;
+        
+        //Vector3 pointConvert = transform.InverseTransformPoint(targetPoint);
 
-        if (Mathf.Abs(pointConvert.y) > viewHeight)
+        if (posDifference.magnitude > viewRange)
         {
             return false;
         }
         
-        if (PointInTriangle(new Vector2(pointConvert.x, pointConvert.z)))
+        if (Vector3.Angle(posDifference, transform.forward) <= viewAngle / 2)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, (targetPoint - transform.position).normalized, out hit)) 
+            if (Physics.Raycast(transform.position, (posDifference).normalized, out hit)) 
             {
                 if (hit.collider.name == pb.chars[pb.activeChar].name)
                 {
                     lastPos = new Vector3(targetPoint.x, transform.position.y, targetPoint.z);
-                    searchCounter = 0;
+                    counter = 0;
                     return true;
                 }
             }
@@ -140,6 +144,8 @@ public class EnemyStationary : MonoBehaviour
     }
 
     // checks if a relative point is in the relative look triangle
+    
+    /*
     bool PointInTriangle (Vector2 point)
     {
         float d1, d2, d3;
@@ -154,6 +160,7 @@ public class EnemyStationary : MonoBehaviour
 
         return !(has_neg && has_pos);
     }
+    */
 
     void Chase()
     {
@@ -187,9 +194,9 @@ public class EnemyStationary : MonoBehaviour
     void Search()
     {
         // come up with a nicer looking search later
-        searchCounter++;
+        counter++;
         transform.Rotate(new Vector3(0, 3, 0), Space.Self);
-        if (searchCounter > searchTime)
+        if (counter > searchTime)
         {
             state = 4;
         }
@@ -217,4 +224,18 @@ public class EnemyStationary : MonoBehaviour
 
     }
 
+    void Stunned()
+    {
+        counter++;
+        if (counter > stunTime)
+        {
+            state = 3;
+        }
+    }
+
+    public void Stun()
+    {
+        counter = 0;
+        state = 5;
+    }
 }
