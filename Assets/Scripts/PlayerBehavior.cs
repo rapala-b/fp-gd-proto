@@ -34,7 +34,6 @@ public class PlayerBehavior : MonoBehaviour
         playerCamera = Camera.main.GetComponent<PlayerCamera>();
         chars[0] = gameObject;
         chars[1] = GameObject.FindGameObjectWithTag("Pet1");
-        chars[1].SetActive(false);
     }
 
      void Update()
