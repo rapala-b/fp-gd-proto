@@ -8,6 +8,7 @@ public class EnemyStationary : MonoBehaviour
 {
     public Vector3 patrolPoint;
     public AudioClip alertSound;
+    public AudioClip playerCaptured;
 
     // vision will be a cone of length viewRange and angle viewAngle
 
@@ -237,5 +238,16 @@ public class EnemyStationary : MonoBehaviour
     {
         counter = 0;
         state = 5;
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            AudioSource.PlayClipAtPoint(playerCaptured, transform.position);
+            FindObjectOfType<LevelManager>().LevelLost();
+            Debug.Log("Player captured, level over");
+        }
     }
 }

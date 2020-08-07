@@ -8,6 +8,7 @@ TagManager:
   - Candy
   - Fire
   - Box
+  - Cage
   layers:
   - Default
   - TransparentFX
