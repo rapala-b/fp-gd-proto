@@ -6,12 +6,14 @@ public class ElephantBehavior : MonoBehaviour
 {
     public Transform waterSprayPoint;
 
+    public PlayerBehavior playerBehavior;
+
     public GameObject waterParticle;
 
     float sprayCountDown = 0.5f;
     float timer = 0f;
 
-    int shotNum = 3;
+    int shotNum = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class ElephantBehavior : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetButton("Fire1")) {
+        if(Input.GetButton("Fire1") && playerBehavior.activeChar == 1) {
             if(timer >= sprayCountDown && shotNum > 0) {
                 GameObject water = Instantiate(waterParticle, waterSprayPoint.position, transform.rotation) as GameObject;
                 Destroy(water, 3f);
@@ -31,7 +33,7 @@ public class ElephantBehavior : MonoBehaviour
             }
         }
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.01f)) {
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 1)) {
             if(hit.transform.CompareTag("WaterSource")) {
                 shotNum = 3;
             }

@@ -792,9 +792,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4429843852643615631}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 0.48299998, z: -5}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4429843852643458997}
   - {fileID: 4429843852643458995}
@@ -816,11 +816,11 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0.13
-  m_Radius: 0.09
+  m_Height: 0.04
+  m_Radius: 0.06
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.0001
+  m_StepOffset: 0.001
+  m_SkinWidth: 0.03
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0.02}
 --- !u!114 &4429843851066082726
@@ -836,6 +836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterSprayPoint: {fileID: 4429843851674710904}
+  playerBehavior: {fileID: 0}
   waterParticle: {fileID: 7933851711707251961, guid: 49d99f053d9c94548893f90203e0183d,
     type: 3}
 --- !u!1 &4429843852643615633
