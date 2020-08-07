@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Cat\CatBehavior.cs" />
     <Compile Include="Assets\Elephant\PyroParticles\Prefab\Script\FireBaseScript.cs" />
     <Compile Include="Assets\Elephant\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
     <Compile Include="Assets\Elephant\PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />
@@ -72,6 +73,9 @@
     <Compile Include="Assets\Elephant\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
     <Compile Include="Assets\Elephant\Scripts\ElephantBehavior.cs" />
     <Compile Include="Assets\Elephant\Scripts\ParticleTriggers.cs" />
+    <Compile Include="Assets\Frog\FrogBehavior.cs" />
+    <Compile Include="Assets\Frog\Models\poisondartfrog\ToxicFrogs\FrogController.cs" />
+    <Compile Include="Assets\Frog\Models\poisondartfrog\ToxicFrogs\RotateCamFrog.cs" />
     <Compile Include="Assets\Imports\Furniture &amp; Interior\3DTOYS\rotatecamera.cs" />
     <Compile Include="Assets\Imports\Furniture &amp; Interior\FurnishedCabin\Scripts\MoveObjectController.cs" />
     <Compile Include="Assets\Imports\Furniture &amp; Interior\FurnishedCabin\Scripts\MoveableObject.cs" />
@@ -80,6 +84,7 @@
     <Compile Include="Assets\Scripts\BreakableObject.cs" />
     <Compile Include="Assets\Scripts\CageButton.cs" />
     <Compile Include="Assets\Scripts\CandyPickupBehavior.cs" />
+    <Compile Include="Assets\Scripts\CharPanel.cs" />
     <Compile Include="Assets\Scripts\EnemyBehavior.cs" />
     <Compile Include="Assets\Scripts\EnemyStationary.cs" />
     <Compile Include="Assets\Scripts\Inspectable.cs" />
@@ -88,6 +93,7 @@
     <Compile Include="Assets\Scripts\PlayerBehavior.cs" />
     <Compile Include="Assets\Scripts\PlayerCamera.cs" />
     <None Include="Assets\Imports\JunkoChan\Readme (English and Japanese).txt" />
+    <None Include="Assets\Cat\Free_cat\Animations\low_poly_cat_animation_list.txt" />
     <None Include="Assets\Imports\Furniture &amp; Interior\Bed &amp; Bath Furniture Pack\Documentation.txt" />
     <None Include="Assets\Imports\Furniture &amp; Interior\Interior Asset\README.txt" />
     <None Include="Assets\Elephant\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
@@ -95,6 +101,7 @@
     <None Include="Assets\Imports\Furniture &amp; Interior\Interior Asset\Source\InteriorPlant\Grass\Materials\Double Sided Transparent Diffuse Bump Cutout.shader" />
     <None Include="Assets\Imports\Furniture &amp; Interior\kitchen props\Readme.txt" />
     <None Include="Assets\Elephant\PyroParticles\Readme.txt" />
+    <None Include="Assets\Frog\README.txt" />
     <None Include="Assets\Imports\Furniture &amp; Interior\3DTOYS\readme.txt" />
     <Reference Include="UnityEngine">
       <HintPath>E:/Unity/2019.4.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
