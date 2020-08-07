@@ -21,6 +21,7 @@ public class PlayerBehavior : MonoBehaviour
     
 
     CharacterController controller;
+    Animator anim;
     Vector3 moveVector;
 
 
@@ -28,13 +29,13 @@ public class PlayerBehavior : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
+        anim.SetInteger("animState", 0);
         activeChar = 0;
         playerCamera = Camera.main.GetComponent<PlayerCamera>();
         chars[0] = gameObject;
         chars[1] = GameObject.FindGameObjectWithTag("Pet1");
         chars[1].SetActive(false);
-
-
     }
 
      void Update()
@@ -49,27 +50,43 @@ public class PlayerBehavior : MonoBehaviour
         Vector3 lateralMove = new Vector3(moveHorizontal, 0.0f, moveVertical).normalized * speed;
         lateralMove = Quaternion.Euler(0, PlayerCamera.horizontal, 0) * lateralMove;
         
-        if (controller.isGrounded) {
+        if (CheckGrounded()) {
             moveVector = lateralMove;
-            
+           
+
             if (Input.GetButton("Jump"))
             {
+
                 moveVector.y = Mathf.Sqrt(2 * jumpHeight * gravity);
+                anim.SetInteger("animState", 2);
             }
-            else { moveVector.y = 0.0f; }
+            else { 
+                moveVector.y = 0.0f;
+                if (moveVector == Vector3.zero)
+                {
+                    anim.SetInteger("animState", 0);
+                }
+                else
+                {
+                    anim.SetInteger("animState", 1);
+                }
+            }
         }
         else 
         {
             // Player is in air
             moveVector.x = lateralMove.x * airspeed / speed;
             moveVector.z = lateralMove.z * airspeed / speed;
+            anim.SetInteger("animState", 3);
         }
         moveVector.y -= gravity * Time.deltaTime;
 
         if (Mathf.Abs(moveVector.x) + Mathf.Abs(moveVector.z) > 0.1f){
             controller.transform.LookAt(new Vector3(controller.transform.position.x + moveVector.x, controller.transform.position.y, controller.transform.position.z + moveVector.z));
         }
-            
+
+        Debug.Log("Move vector: " + moveVector);
+
         controller.Move(moveVector * Time.deltaTime);
     }
 
@@ -123,5 +140,11 @@ public class PlayerBehavior : MonoBehaviour
         }
 
         charPanel.UpdatePanels();
+    }
+
+    bool CheckGrounded()
+    {//Judge whether Junkochan is on the ground or not
+        Ray ray = new Ray(this.transform.position + Vector3.up * 0.05f, Vector3.down * 0.1f);//Shoot ray at 0.05f upper from Junkochan's feet position to the ground with its length of 0.1f
+        return Physics.Raycast(ray, 0.1f);//If the ray hit the ground, return true
     }
 }
