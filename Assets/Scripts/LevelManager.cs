@@ -15,20 +15,34 @@ public class LevelManager : MonoBehaviour
 
     int candiesCount;
 
+    // Gamewide:
     public static int candiesFoundCount = 0;
     public static bool isGameOver = false;
+
+    // Level2 (possibly rewrite Level1 to reuse this)
+    public static int keysCollected = 0;
+    public static int totalKeys;
+    public static bool isCatFreed = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        candiesCount = CandyPickupBehavior.candiesCount;
-        isGameOver = false;
-        //SetCandyCounterText();
+        InitializeLevel();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    void InitializeLevel()
+    {
+        isGameOver = false;
+        keysCollected = 0;
+        isCatFreed = false;
+        candiesCount = CandyPickupBehavior.candiesCount;
+        //SetCandyCounterText();
     }
 
     public void LevelLost()
@@ -67,5 +81,13 @@ public class LevelManager : MonoBehaviour
     {
         candyCountText.text = "Candies: " + candiesFoundCount.ToString() + "/" 
             + candiesCount.ToString();
+    }
+
+    public void freeCat()
+    {
+        if (keysCollected == totalKeys)
+        {
+            isCatFreed = true;
+        }
     }
 }
