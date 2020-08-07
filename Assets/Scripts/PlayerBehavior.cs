@@ -154,8 +154,8 @@ public class PlayerBehavior : MonoBehaviour
     }
 
     bool CheckGrounded()
-    {//Judge whether Junkochan is on the ground or not
-        Ray ray = new Ray(this.transform.position + Vector3.up * 0.05f, Vector3.down * 0.1f);//Shoot ray at 0.05f upper from Junkochan's feet position to the ground with its length of 0.1f
+    {//Judge whether current character is on the ground or not
+        Ray ray = new Ray(chars[activeChar].transform.position + Vector3.up * 0.05f, Vector3.down * 0.1f);//Shoot ray at 0.05f upper from Junkochan's feet position to the ground with its length of 0.1f
         return Physics.Raycast(ray, 0.1f);//If the ray hit the ground, return true
     }
 }
