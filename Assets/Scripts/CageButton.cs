@@ -26,8 +26,8 @@ public class CageButton : MonoBehaviour
             pressed += 1;
             AudioSource.PlayClipAtPoint(buttonSound, transform.position);
             if (pressed == 3) {
-                playerBehavior.status[1] = 0;
-                //GameObject.Destroy(GameObject.FindGameObjectWithTag("Cage"));
+                playerBehavior.status[1] = 1;
+                GameObject.Destroy(GameObject.FindGameObjectWithTag("Cage"));
             }
         }
     }

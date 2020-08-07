@@ -90,8 +90,6 @@ public class PlayerBehavior : MonoBehaviour
             controller.transform.LookAt(new Vector3(controller.transform.position.x + moveVector.x, controller.transform.position.y, controller.transform.position.z + moveVector.z));
         }
 
-        Debug.Log("Move vector: " + moveVector);
-
         controller.Move(moveVector * Time.deltaTime);
     }
 
