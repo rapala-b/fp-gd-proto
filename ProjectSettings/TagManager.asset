@@ -9,6 +9,8 @@ TagManager:
   - Fire
   - Box
   - Cage
+  - Guts
+  - WaterSource
   layers:
   - Default
   - TransparentFX

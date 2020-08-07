@@ -103,8 +103,6 @@ public class CharPanel : MonoBehaviour
         int length = Array.IndexOf(pb.status, -1);
         if (length == -1) {length = 4;}
         target = (target + delta + length) % length;
-        Debug.Log(target + " " + length);
-
         //UpdatePanels();
     }
 }
