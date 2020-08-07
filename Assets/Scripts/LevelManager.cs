@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        SetCandyCounterText();
     }
 
     void InitializeLevel()
@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
         keysCollected = 0;
         isCatFreed = false;
         candiesCount = CandyPickupBehavior.candiesCount;
-        //SetCandyCounterText();
+        SetCandyCounterText();
     }
 
     public void LevelLost()
