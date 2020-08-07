@@ -14,7 +14,6 @@ public class PlayerBehavior : MonoBehaviour
     public int[] status = {1, -1, -1, -1};
     public int activeChar = 0;
     public GameObject[] chars = {null, null};
-    public bool canSwitch = false;
     public CharPanel charPanel;
 
     PlayerCamera playerCamera;
@@ -40,8 +39,14 @@ public class PlayerBehavior : MonoBehaviour
      void Update()
     {
         // only toggles between 0 and 1 for now
-        if (Input.GetKeyDown("f") & canSwitch) { SwitchControl((activeChar + 1) % 2); }
-        if (Input.GetKeyDown("r") & canSwitch) { Recall(); }
+        if (Input.GetKeyDown("f") & status[charPanel.target] != -1) 
+        { 
+            SwitchControl(charPanel.target); 
+        }
+        if (Input.GetKeyDown("r") & charPanel.target != 0) 
+        { 
+            Recall(charPanel.target); 
+        }
 
         float moveHorizontal = Input.GetAxis("Horizontal") * Time.deltaTime;
         float moveVertical = Input.GetAxis("Vertical") * Time.deltaTime;
@@ -87,11 +92,13 @@ public class PlayerBehavior : MonoBehaviour
             activeChar = target;
             controller = chars[target].GetComponent<CharacterController>();
         }
-        charPanel.UpdatePanels();
+        //charPanel.UpdatePanels();
     }
 
-    void Recall()
+    // currently can recall an individual stuffed animal
+    void Recall(int target)
     {
+        /*
         if (activeChar == 0)
         {
             for (int i = 1; i < status.Length; i++ )
@@ -103,8 +110,15 @@ public class PlayerBehavior : MonoBehaviour
                 }
             }
         }
+        */
+        
+        if (activeChar == 0)
+        {
+            chars[target].SetActive(false);
+            status[target] = 0;
+        }
 
-        charPanel.UpdatePanels();
+        //charPanel.UpdatePanels();
     }
 
     void Damage(int target)
@@ -122,6 +136,6 @@ public class PlayerBehavior : MonoBehaviour
             activeChar = 0;
         }
 
-        charPanel.UpdatePanels();
+        //charPanel.UpdatePanels();
     }
 }
