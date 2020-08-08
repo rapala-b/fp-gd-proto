@@ -5094,6 +5094,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1047374508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 322492230, guid: 757e3aea8e4f1f241a65c3c57cc388b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 283919796}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1081381244
 Mesh:
   m_ObjectHideFlags: 0
@@ -5347,6 +5359,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1093262101 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1474442781, guid: 757e3aea8e4f1f241a65c3c57cc388b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 283919796}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1115548417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6392,6 +6416,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1317650159}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1341385412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2091986382, guid: 757e3aea8e4f1f241a65c3c57cc388b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 283919796}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1342384118 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1720083587289550, guid: 51575859ce98c794abfd0277386c7ce5,
@@ -6662,6 +6698,21 @@ PrefabInstance:
       propertyPath: playerBehavior
       value: 
       objectReference: {fileID: 958844566}
+    - target: {fileID: 4429843851066082726, guid: b9e8e4608bb231f439dc3297e35a86ea,
+        type: 3}
+      propertyPath: water1
+      value: 
+      objectReference: {fileID: 1093262101}
+    - target: {fileID: 4429843851066082726, guid: b9e8e4608bb231f439dc3297e35a86ea,
+        type: 3}
+      propertyPath: water2
+      value: 
+      objectReference: {fileID: 1047374508}
+    - target: {fileID: 4429843851066082726, guid: b9e8e4608bb231f439dc3297e35a86ea,
+        type: 3}
+      propertyPath: water3
+      value: 
+      objectReference: {fileID: 1341385412}
     - target: {fileID: 4429843852643458991, guid: b9e8e4608bb231f439dc3297e35a86ea,
         type: 3}
       propertyPath: m_LocalPosition.x
