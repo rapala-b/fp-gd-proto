@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce046142bea316940ba809b79fa33a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candyCollectSFX: {fileID: 8300000, guid: 26a7ade9940744d4c8b323294b3f6a3f, type: 3}
+  candyCollectSFX: {fileID: 8300000, guid: 25e7447af8046fe49ad4ae731369c37c, type: 3}
 --- !u!136 &-4399544297656081312
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Audio\Jemeza\Ambient Horror Sound FX Free\Example\Scripts\SoundPlayer.cs" />
     <Compile Include="Assets\Cat\CatBehavior.cs" />
     <Compile Include="Assets\Elephant\PyroParticles\Prefab\Script\FireBaseScript.cs" />
     <Compile Include="Assets\Elephant\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
@@ -114,6 +115,7 @@
     <None Include="Assets\Elephant\PyroParticles\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Models\Key\readME keys.txt" />
     <None Include="Assets\Frog\README.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Imports\Furniture &amp; Interior\3DTOYS\readme.txt" />

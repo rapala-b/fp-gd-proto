@@ -27,6 +27,7 @@ public class EnemyStationary : MonoBehaviour
     public float[] lookCycle = {0, 180}; 
 
     PlayerBehavior pb;
+    Animator anim;
 
     // 0=stationed, 1=chasing, 2=chase reorient, 3=searching, 4=returning, 5=stunned;
     int state;
@@ -52,6 +53,7 @@ public class EnemyStationary : MonoBehaviour
         //triangle[2] = new Vector2(-1 * viewRange / Mathf.Tan(angle), viewRange);
 
         pb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehavior>();
+        anim = GetComponent<Animator>();
 
         InvokeRepeating("AIUpdate", 0, 0.02f);
     }
@@ -67,26 +69,32 @@ public class EnemyStationary : MonoBehaviour
         if (state == 0)
         {
             Stationed();
+            anim.SetInteger("animState", -1);
         }
         else if (state == 1)
         {
             Chase();
+            //anim.SetInteger("animState", 1);
         }
         else if (state == 2)
         {
             ChaseReorient();
+            //anim.SetInteger("animState", 1);
         }
         else if (state == 3)
         {
             Search();
+            anim.SetInteger("animState", 1);
         }
         else if (state == 4)
         {
             ReturnToStation();
+            anim.SetInteger("animState", 1);
         }
         else if (state == 5)
         {
             Stunned();
+            anim.SetInteger("animState", 0);
         }
     }
 
@@ -170,6 +178,8 @@ public class EnemyStationary : MonoBehaviour
             Vector3 targetPoint = pb.chars[pb.activeChar].transform.position;
             Vector3 targetTemp = new Vector3(targetPoint.x, transform.position.y, targetPoint.z);
             transform.LookAt(targetTemp);
+            //targetTemp.y = 0.7f;
+            //Debug.Log(targetTemp);
             transform.position = Vector3.MoveTowards(transform.position, targetTemp, moveSpeed);
         }
         else
