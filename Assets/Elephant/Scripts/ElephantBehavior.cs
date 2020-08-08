@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ElephantBehavior : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class ElephantBehavior : MonoBehaviour
     public PlayerBehavior playerBehavior;
 
     public GameObject waterParticle;
+    
+    public Image water1;
+    public Image water2;
+    public Image water3;
 
     float sprayCountDown = 0.5f;
     float timer = 0f;
@@ -41,12 +46,56 @@ public class ElephantBehavior : MonoBehaviour
             
 
         timer += Time.deltaTime;
+
+        HandleWaterUI();
         
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit) {
         if (hit.gameObject.CompareTag("Box")) {
             Destroy(hit.gameObject);
+        }
+    }
+
+    void HandleWaterUI()
+    {
+        if (playerBehavior.activeChar != 1)
+        {
+            water1.enabled = false;
+            water2.enabled = false;
+            water3.enabled = false;
+        }
+        else
+        {
+            water1.enabled = true;
+            water2.enabled = true;
+            water3.enabled = true;
+            switch(shotNum)
+            {
+                case 0: water1.color = Color.black;
+                water2.color = Color.black;
+                water3.color = Color.black;
+                break;
+
+                case 1: water1.color = Color.white;
+                water2.color = Color.black;
+                water3.color = Color.black;
+                break;
+
+                case 2: water1.color = Color.white;
+                water2.color = Color.white;
+                water3.color = Color.black;
+                break;
+
+                case 3: water1.color = Color.white;
+                water2.color = Color.white;
+                water3.color = Color.white;
+                break;
+
+                
+                
+
+            }
         }
     }
 

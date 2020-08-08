@@ -236,8 +236,11 @@ public class EnemyStationary : MonoBehaviour
 
     public void Stun()
     {
-        counter = 0;
-        state = 5;
+        if (state != 2 & state != 3)
+        {
+            counter = 0;
+            state = 5;
+        }
     }
 
 
