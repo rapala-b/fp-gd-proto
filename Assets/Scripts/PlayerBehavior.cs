@@ -12,7 +12,7 @@ public class PlayerBehavior : MonoBehaviour
     // animals now get recalled upon damage
     //public int[] health = {3, 3};
     public int[] status = {1, -1, -1, -1};
-    public int activeChar = 0;
+    public static int activeChar = 0;
     public GameObject[] chars = {null, null};
     public CharPanel charPanel;
 
@@ -105,6 +105,7 @@ public class PlayerBehavior : MonoBehaviour
             playerCamera.focus = chars[target].transform;
             activeChar = target;
             controller = chars[target].GetComponent<CharacterController>();
+            Debug.Log("Active Char: " + activeChar);
         }
         //charPanel.UpdatePanels();
     }

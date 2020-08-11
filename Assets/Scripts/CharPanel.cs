@@ -94,7 +94,7 @@ public class CharPanel : MonoBehaviour
             else { borderList[i].enabled = false; }
         }
 
-        panelList[pb.activeChar].color = panelActiveColor;
+        panelList[PlayerBehavior.activeChar].color = panelActiveColor;
     }
 
     // amount to increase or decrease by

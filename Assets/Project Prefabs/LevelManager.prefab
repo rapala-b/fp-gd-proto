@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f019ac0f01f15489e250b2b5e5ea4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelBeatSFX: {fileID: 0}
-  levelLostSFX: {fileID: 0}
+  levelBeatSFX: {fileID: 8300000, guid: 3d15edb126ec57c42817d894396b63c7, type: 3}
+  levelLostSFX: {fileID: 8300000, guid: 06c45e058943d9948ab0eca4dccc6f22, type: 3}
   nextLevel: First Floor
   gameText: {fileID: 0}
   candyCountText: {fileID: 0}

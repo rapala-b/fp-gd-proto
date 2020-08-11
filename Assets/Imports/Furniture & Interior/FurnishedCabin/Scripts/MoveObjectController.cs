@@ -46,7 +46,8 @@ public class MoveObjectController : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{		
 		if (other.gameObject == player)		//player has collided with trigger
-		{			
+		{
+            Debug.Log("PLayer entered door collider");
 			playerEntered = true;
 
 		}
@@ -55,8 +56,10 @@ public class MoveObjectController : MonoBehaviour
 	void OnTriggerExit(Collider other)
 	{		
 		if (other.gameObject == player)		//player has exited trigger
-		{			
-			playerEntered = false;
+		{
+            Debug.Log("PLayer exit door collider");
+
+            playerEntered = false;
 			//hide interact message as player may not have been looking at object when they left
 			showInteractMsg = false;		
 		}
@@ -74,10 +77,14 @@ public class MoveObjectController : MonoBehaviour
 			RaycastHit hit;
 
 			//if raycast hits a collider on the rayLayerMask
-			if (Physics.Raycast(rayOrigin,fpsCam.transform.forward, out hit,reachRange,rayLayerMask))
+			if (Physics.Raycast(player.transform.position, player.transform.TransformDirection(Vector3.forward) * 5, out hit, Mathf.Infinity, rayLayerMask))
 			{
+                Debug.Log("Raycast successful");
+
+
 				MoveableObject moveableObject = null;
-				//is the object of the collider player is looking at the same as me?
+				
+                //is the object of the collider player is looking at the same as me?
 				if (!isEqualToParent(hit.collider, out moveableObject))
 				{	//it's not so return;
 					return;
@@ -103,8 +110,9 @@ public class MoveObjectController : MonoBehaviour
 			else
 			{
 				showInteractMsg = false;
-			}
-		}
+                Debug.Log("Raycast not successful");
+            }
+        }
 
 	}
 
