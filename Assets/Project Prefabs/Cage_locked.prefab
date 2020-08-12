@@ -54,8 +54,9 @@ GameObject:
   - component: {fileID: 7152623727968191476}
   - component: {fileID: 7152623727968191479}
   - component: {fileID: 7152623727968191478}
+  - component: {fileID: 3876858554096257976}
   m_Layer: 0
-  m_Name: Cage
+  m_Name: Cage_locked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +108,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6e3258bc7ff3d934da7e3851e6ad1a0b, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,10 +138,27 @@ BoxCollider:
   m_GameObject: {fileID: 7152623727968191472}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3876858554096257976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7152623727968191472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59fa840137edaab42a0762405b0e670f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cageUnlockedPrefab: {fileID: 7152623727968191472, guid: 9e63e139600c03e4eae6342b204f46ff,
+    type: 3}
+  cageUnlockedSFX: {fileID: 8300000, guid: fe142455f0c7ba9479ef739deecc7c1e, type: 3}
+  cageLockedSFX: {fileID: 8300000, guid: 66aa73cec96704b4aae3c9b31783354d, type: 3}
+  cageLockedDuration: 5
 --- !u!64 &4793569312418200417
 MeshCollider:
   m_ObjectHideFlags: 0

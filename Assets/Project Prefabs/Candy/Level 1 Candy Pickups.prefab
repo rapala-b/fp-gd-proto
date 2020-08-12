@@ -47,6 +47,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lollipop
       objectReference: {fileID: 0}
+    - target: {fileID: 8073164013633168405, guid: 628a00ad5158c474d920492562916179,
+        type: 3}
+      propertyPath: m_TagString
+      value: Candy
+      objectReference: {fileID: 0}
     - target: {fileID: 8073164013633402933, guid: 628a00ad5158c474d920492562916179,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -137,6 +142,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candy
       objectReference: {fileID: 0}
+    - target: {fileID: 2504656613913333987, guid: 8c91236bc333d0c40bbc65ee46582181,
+        type: 3}
+      propertyPath: m_TagString
+      value: Candy
+      objectReference: {fileID: 0}
     - target: {fileID: 2504656613913431235, guid: 8c91236bc333d0c40bbc65ee46582181,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -222,6 +232,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2504656613913333987, guid: 8c91236bc333d0c40bbc65ee46582181,
+        type: 3}
+      propertyPath: m_TagString
+      value: Candy
+      objectReference: {fileID: 0}
     - target: {fileID: 2504656613913431235, guid: 8c91236bc333d0c40bbc65ee46582181,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -306,6 +321,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lollipop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073164013633168405, guid: 628a00ad5158c474d920492562916179,
+        type: 3}
+      propertyPath: m_TagString
+      value: Candy
       objectReference: {fileID: 0}
     - target: {fileID: 8073164013633402933, guid: 628a00ad5158c474d920492562916179,
         type: 3}
@@ -466,6 +486,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CandyCane
+      objectReference: {fileID: 0}
+    - target: {fileID: 2575382142270577179, guid: eb833ae58ee3f7f408059c497d232d66,
+        type: 3}
+      propertyPath: m_TagString
+      value: Candy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb833ae58ee3f7f408059c497d232d66, type: 3}

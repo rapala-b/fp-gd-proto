@@ -81,7 +81,7 @@ public class PlayerBehavior : MonoBehaviour
             // Player is in air
             moveVector.x = lateralMove.x * airspeed / speed;
             moveVector.z = lateralMove.z * airspeed / speed;
-            anim.SetInteger("animState", 3);
+            //anim.SetInteger("animState", 3);
         }
         moveVector.y -= gravity * Time.deltaTime;
 
@@ -99,7 +99,8 @@ public class PlayerBehavior : MonoBehaviour
             if (status[target] == 0) 
             { 
                 status[target] = 1; 
-                chars[target].transform.position = chars[activeChar].transform.position + 0.1f * chars[activeChar].transform.forward;
+                Vector3 summonPosition = chars[activeChar].transform.position + 0.1f * chars[activeChar].transform.forward;
+                chars[target].transform.position = summonPosition;
                 chars[target].SetActive(true);
             }
             playerCamera.focus = chars[target].transform;

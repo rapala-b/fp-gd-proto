@@ -6,14 +6,6 @@ public class CandyPickupBehavior : MonoBehaviour
 {
     public AudioClip candyCollectSFX;
 
-    public static int candiesCount;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        candiesCount++;
-    }
-
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             gameObject.SetActive(false);

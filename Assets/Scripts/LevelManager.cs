@@ -41,7 +41,8 @@ public class LevelManager : MonoBehaviour
         isGameOver = false;
         keysCollected = 0;
         isCatFreed = false;
-        candiesCount = CandyPickupBehavior.candiesCount;
+        candiesFoundCount = 0;
+        candiesCount = GameObject.FindGameObjectsWithTag("Candy").Length;
         SetCandyCounterText();
     }
 
