@@ -95,11 +95,12 @@ Material:
     - _SrcBlend: 1
     - _SunDisk: 2
     - _SunSize: 0.04
+    - _SunSizeConvergence: 5
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GroundColor: {r: 0.74264705, g: 0.55378056, b: 0.21600004, a: 1}
-    - _SkyTint: {r: 0.5749933, g: 0.6691177, b: 0.30995893, a: 1}
+    - _GroundColor: {r: 0, g: 0.09433961, b: 0.018847795, a: 1}
+    - _SkyTint: {r: 0.6792453, g: 0.1940692, b: 0, a: 1}
     - _Tint: {r: 0.6985294, g: 0.53969544, b: 0.3954909, a: 0.5}

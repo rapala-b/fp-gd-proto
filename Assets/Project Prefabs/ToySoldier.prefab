@@ -230,9 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7518271033931636136}
   - component: {fileID: 7518271033922371332}
-  - component: {fileID: 447462136807163359}
   - component: {fileID: -867363037980362088}
-  - component: {fileID: 912928843}
   - component: {fileID: 54160260}
   - component: {fileID: 54160261}
   m_Layer: 0
@@ -278,29 +276,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &447462136807163359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7518271033931839330}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19bbccceb6be1a34890f44893d30c977, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1
-  target: {fileID: 0}
-  attackRange: 0
-  chaseDistance: 2
-  attackDamage: 1
-  timeBetweenAttacks: 2
-  patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  visionRange: 5
 --- !u!136 &-867363037980362088
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -311,34 +286,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.7
+  m_Radius: 3.02
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 1.32, z: 0}
---- !u!114 &912928843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7518271033931839330}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1fed1d37cc664c47a4d333919b49134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolPoint: {x: 3, y: 1.7, z: -5.43}
-  alertSound: {fileID: 8300000, guid: efcf29c536d89ff478dbc04367b84e2d, type: 3}
-  playerCaptured: {fileID: 8300000, guid: 06c45e058943d9948ab0eca4dccc6f22, type: 3}
-  viewRange: 4
-  viewAngle: 60
-  moveSpeed: 0.015
-  lookTime: 100
-  searchTime: 200
-  stunTime: 500
-  lookCycle:
-  - 0
-  - 180
 --- !u!195 &54160260
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -377,9 +328,10 @@ MonoBehaviour:
   - {x: 3, y: 1.7, z: -5.43}
   - {x: 6, y: 1.7, z: -5.43}
   alertSound: {fileID: 8300000, guid: efcf29c536d89ff478dbc04367b84e2d, type: 3}
-  playerCaptured: {fileID: 8300000, guid: 06c45e058943d9948ab0eca4dccc6f22, type: 3}
-  viewRange: 2
-  viewAngle: 60
+  playerCapturedSFX: {fileID: 8300000, guid: b3fcad6884630204eaad03c22907bd0d, type: 3}
+  enemyEyes: {fileID: 72747421978095052}
+  viewRange: 2.5
+  viewAngle: 100
   moveSpeed: 0.5
   attackRange: 0.5
   stunTime: 20
@@ -599,6 +551,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.99999994}
   m_Children:
   - {fileID: 7518271033931696620}
+  - {fileID: 72747421978095052}
   m_Father: {fileID: 7518271033931679284}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1134,3 +1087,33 @@ Transform:
   m_Father: {fileID: 7518271033931696930}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8929045712316847108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 72747421978095052}
+  m_Layer: 0
+  m_Name: SoldierEyes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &72747421978095052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929045712316847108}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.18, y: -0, z: 0.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7518271033931696930}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
