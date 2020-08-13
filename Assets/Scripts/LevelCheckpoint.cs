@@ -48,6 +48,7 @@ public class LevelCheckpoint : MonoBehaviour
 
     private void LevelOne()
     {
+        Debug.Log("Level 1 beat");
         levelManager.LevelBeat();
     }
 

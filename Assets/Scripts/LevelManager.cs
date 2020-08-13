@@ -56,6 +56,7 @@ public class LevelManager : MonoBehaviour
         isFrogFreed = false;
         candiesFoundInLevel = 0;
         candiesInCurrentLevel = GameObject.FindGameObjectsWithTag("Candy").Length;
+        //currentLevel = SceneManager.GetActiveScene().buildIndex;
         SetCandyCounterText();
     }
 
