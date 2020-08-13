@@ -23,11 +23,14 @@ public class LevelManager : MonoBehaviour
 
     // Current Level Variables
     public static int candiesFoundInLevel = 0;
+    int candiesInCurrentLevel;
+
 
     // Level2 (possibly rewrite Level1 to reuse this)
     public static int keysCollected = 0;
     public static int totalKeys;
     public static bool isCatFreed = false;
+    public static bool isFrogFreed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +53,9 @@ public class LevelManager : MonoBehaviour
         isGameOver = false;
         keysCollected = 0;
         isCatFreed = false;
-        candiesFoundCount = 0;
-        candiesCount = GameObject.FindGameObjectsWithTag("Candy").Length;
+        isFrogFreed = false;
+        candiesFoundInLevel = 0;
+        candiesInCurrentLevel = GameObject.FindGameObjectsWithTag("Candy").Length;
         SetCandyCounterText();
     }
 
@@ -110,7 +114,7 @@ public class LevelManager : MonoBehaviour
     void SetCandyCounterText()
     {
         candyCountText.text = "Candies: " + candiesFoundInLevel.ToString() + "/" 
-            + CandyPickupBehavior.candiesCount.ToString();
+            + candiesInCurrentLevel.ToString();
     }
 
     void SetCageButtonText()
