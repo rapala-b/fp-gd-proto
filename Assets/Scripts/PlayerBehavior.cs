@@ -34,6 +34,8 @@ public class PlayerBehavior : MonoBehaviour
         playerCamera = Camera.main.GetComponent<PlayerCamera>();
         chars[0] = gameObject;
         chars[1] = GameObject.FindGameObjectWithTag("Pet1");
+        chars[2] = GameObject.FindGameObjectWithTag("Pet2");
+        chars[3] = GameObject.FindGameObjectWithTag("Pet3");
     }
 
      void Update()
@@ -97,7 +99,7 @@ public class PlayerBehavior : MonoBehaviour
             if (status[target] == 0) 
             { 
                 status[target] = 1; 
-                Vector3 summonPosition = chars[activeChar].transform.position + 0.1f * chars[activeChar].transform.forward;
+                Vector3 summonPosition = chars[0].transform.position + 0.1f * chars[0].transform.forward;
                 chars[target].transform.position = summonPosition;
                 chars[target].SetActive(true);
             }
