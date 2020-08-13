@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         SetCandyCounterText();
-        if (currentLevel == 1)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             SetCageButtonText();
         }

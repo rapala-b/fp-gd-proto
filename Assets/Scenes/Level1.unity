@@ -5696,28 +5696,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -867363037980362088, guid: d8c94530d545c7549b061c738820d86e,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -867363037980362088, guid: d8c94530d545c7549b061c738820d86e,
-        type: 3}
-      propertyPath: m_Radius
-      value: 3.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 54160261, guid: d8c94530d545c7549b061c738820d86e, type: 3}
-      propertyPath: viewAngle
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 54160261, guid: d8c94530d545c7549b061c738820d86e, type: 3}
-      propertyPath: playerCapturedSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: b3fcad6884630204eaad03c22907bd0d, type: 3}
-    - target: {fileID: 54160261, guid: d8c94530d545c7549b061c738820d86e, type: 3}
-      propertyPath: viewRange
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7518271033931636136, guid: d8c94530d545c7549b061c738820d86e,
         type: 3}
       propertyPath: m_LocalPosition.x

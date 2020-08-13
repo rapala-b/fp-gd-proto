@@ -286,7 +286,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.7
+  m_Radius: 3.02
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 1.32, z: 0}
@@ -328,10 +328,10 @@ MonoBehaviour:
   - {x: 3, y: 1.7, z: -5.43}
   - {x: 6, y: 1.7, z: -5.43}
   alertSound: {fileID: 8300000, guid: efcf29c536d89ff478dbc04367b84e2d, type: 3}
-  playerCaptured: {fileID: 8300000, guid: 06c45e058943d9948ab0eca4dccc6f22, type: 3}
+  playerCapturedSFX: {fileID: 8300000, guid: b3fcad6884630204eaad03c22907bd0d, type: 3}
   enemyEyes: {fileID: 72747421978095052}
-  viewRange: 2
-  viewAngle: 60
+  viewRange: 2.5
+  viewAngle: 100
   moveSpeed: 0.5
   attackRange: 0.5
   stunTime: 20

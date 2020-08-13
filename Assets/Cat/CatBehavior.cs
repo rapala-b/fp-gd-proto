@@ -14,7 +14,7 @@ public class CatBehavior : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
-        anim.SetInteger("animState", 2);
+        anim.SetInteger("animState", 0);
     }
 
     // Update is called once per frame
@@ -31,17 +31,21 @@ public class CatBehavior : MonoBehaviour
             {
                 anim.SetInteger("animState", 1);
             }
-            else
-            {
-                anim.SetInteger("animState", 2);
+            else if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0)) {
+                anim.SetInteger("animState", 0);
             }
         }
     }
     void Attack() {
         RaycastHit hit;
-        
-        if(Physics.Raycast(transform.position, catEye.forward, out hit, attackRange)) {
+       
+        Debug.Log("Cat attack");
+        anim.StopPlayback();
+        anim.SetInteger("animState", 2);
+
+        if (Physics.Raycast(transform.position, catEye.forward, out hit, attackRange)) {
             if(hit.transform.gameObject.GetComponent<EnemyStationary>() != null) {
+                Debug.Log("Enemy Hit by cat");
                 hit.transform.gameObject.GetComponent<EnemyStationary>().Stun();
             }
         }
