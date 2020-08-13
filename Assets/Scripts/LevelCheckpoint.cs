@@ -67,7 +67,7 @@ public class LevelCheckpoint : MonoBehaviour
 
     private bool KeysAllCollected()
     {
-        return LevelManager.keysCollected == LevelManager.totalKeys;
+        return KeyBehavior.numberOfKeysCollected == KeyBehavior.numberOfKeysInLevel;
     }
 
     private bool AllAnimalsFreed()

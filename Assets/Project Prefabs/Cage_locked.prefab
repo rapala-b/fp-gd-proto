@@ -156,9 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cageUnlockedPrefab: {fileID: 7152623727968191472, guid: 9e63e139600c03e4eae6342b204f46ff,
     type: 3}
-  cageUnlockedSFX: {fileID: 8300000, guid: fe142455f0c7ba9479ef739deecc7c1e, type: 3}
-  cageLockedSFX: {fileID: 8300000, guid: 66aa73cec96704b4aae3c9b31783354d, type: 3}
-  cageLockedDuration: 5
+  cageUnlockedSFX: {fileID: 8300000, guid: bc025a04c895ae94fb277258f12e6d42, type: 3}
 --- !u!64 &4793569312418200417
 MeshCollider:
   m_ObjectHideFlags: 0
