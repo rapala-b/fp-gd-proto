@@ -12,7 +12,7 @@ public class PlayerBehavior : MonoBehaviour
     // animals now get recalled upon damage
     //public int[] health = {3, 3};
     public int[] status = {1, -1, -1, -1};
-    public int activeChar = 0;
+    public static int activeChar = 0;
     public GameObject[] chars = {null, null};
     public CharPanel charPanel;
 
@@ -56,11 +56,9 @@ public class PlayerBehavior : MonoBehaviour
         
         if (CheckGrounded()) {
             moveVector = lateralMove;
-           
 
             if (Input.GetButton("Jump"))
             {
-
                 moveVector.y = Mathf.Sqrt(2 * jumpHeight * gravity);
                 anim.SetInteger("animState", 2);
             }
@@ -106,6 +104,7 @@ public class PlayerBehavior : MonoBehaviour
             playerCamera.focus = chars[target].transform;
             activeChar = target;
             controller = chars[target].GetComponent<CharacterController>();
+            Debug.Log("Active Char: " + activeChar);
         }
         //charPanel.UpdatePanels();
     }
@@ -157,6 +156,6 @@ public class PlayerBehavior : MonoBehaviour
     bool CheckGrounded()
     {//Judge whether current character is on the ground or not
         Ray ray = new Ray(chars[activeChar].transform.position + Vector3.up * 0.05f, Vector3.down * 0.1f);//Shoot ray at 0.05f upper from Junkochan's feet position to the ground with its length of 0.1f
-        return Physics.Raycast(ray, 0.1f);//If the ray hit the ground, return true
+        return Physics.Raycast(ray, 0.05f);//If the ray hit the ground, return true
     }
 }

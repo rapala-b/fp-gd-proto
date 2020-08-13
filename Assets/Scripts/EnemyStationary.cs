@@ -126,7 +126,7 @@ public class EnemyStationary : MonoBehaviour
 
     bool CanSeePlayer()
     {
-        Vector3 targetPoint = pb.chars[pb.activeChar].transform.position;
+        Vector3 targetPoint = pb.chars[PlayerBehavior.activeChar].transform.position;
         Vector3 posDifference = targetPoint - transform.position;
         
         //Vector3 pointConvert = transform.InverseTransformPoint(targetPoint);
@@ -141,7 +141,7 @@ public class EnemyStationary : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, (posDifference).normalized, out hit)) 
             {
-                if (hit.collider.name == pb.chars[pb.activeChar].name)
+                if (hit.collider.name == pb.chars[PlayerBehavior.activeChar].name)
                 {
                     lastPos = new Vector3(targetPoint.x, transform.position.y, targetPoint.z);
                     counter = 0;
@@ -175,7 +175,7 @@ public class EnemyStationary : MonoBehaviour
     {
         if (CanSeePlayer()) 
         {
-            Vector3 targetPoint = pb.chars[pb.activeChar].transform.position;
+            Vector3 targetPoint = pb.chars[PlayerBehavior.activeChar].transform.position;
             Vector3 targetTemp = new Vector3(targetPoint.x, transform.position.y, targetPoint.z);
             transform.LookAt(targetTemp);
             //targetTemp.y = 0.7f;

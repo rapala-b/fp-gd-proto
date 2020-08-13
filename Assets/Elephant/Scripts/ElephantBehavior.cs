@@ -6,9 +6,6 @@ using UnityEngine.UI;
 public class ElephantBehavior : MonoBehaviour
 {
     public Transform waterSprayPoint;
-
-    public PlayerBehavior playerBehavior;
-
     public GameObject waterParticle;
     
     public Image water1;
@@ -29,7 +26,7 @@ public class ElephantBehavior : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetButton("Fire1") && playerBehavior.activeChar == 1) {
+        if(Input.GetButton("Fire1") && PlayerBehavior.activeChar == 1) {
             if(timer >= sprayCountDown && shotNum > 0) {
                 GameObject water = Instantiate(waterParticle, waterSprayPoint.position, transform.rotation) as GameObject;
                 Destroy(water, 3f);
@@ -59,7 +56,7 @@ public class ElephantBehavior : MonoBehaviour
 
     void HandleWaterUI()
     {
-        if (playerBehavior.activeChar != 1)
+        if (PlayerBehavior.activeChar != 1)
         {
             water1.enabled = false;
             water2.enabled = false;

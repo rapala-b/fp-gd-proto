@@ -21,23 +21,29 @@ public class FrogBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(controller.velocity.magnitude > 0.01) {
-            anim.SetInteger("state", 1);
-        }
-        else {
-            anim.SetInteger("state", 0);
-        }
-
-        if(Input.GetButton("Fire1")) {
-            if(timer >= attackSpeed) {
-                Debug.Log("tongue");
-                Tongue();
-                anim.SetInteger("state", 2);
-                timer = 0f;
+        if (PlayerBehavior.activeChar == 3)
+        {
+            if (controller.velocity.magnitude > 0.01)
+            {
+                anim.SetInteger("state", 1);
             }
-        }
-        timer += Time.deltaTime;
+            else
+            {
+                anim.SetInteger("state", 0);
+            }
 
+            if (Input.GetButton("Fire1"))
+            {
+                if (timer >= attackSpeed)
+                {
+                    Debug.Log("tongue");
+                    Tongue();
+                    anim.SetInteger("state", 2);
+                    timer = 0f;
+                }
+            }
+            timer += Time.deltaTime;
+        }
     }
 
     void Tongue() {

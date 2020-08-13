@@ -21,7 +21,7 @@ public class CageButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("e") & playerBehavior.activeChar == 0 & !done & (playerBehavior.chars[playerBehavior.activeChar].transform.position - transform.position).magnitude < 0.5f){
+        if (Input.GetKeyDown("e") & PlayerBehavior.activeChar == 0 & !done & (playerBehavior.chars[PlayerBehavior.activeChar].transform.position - transform.position).magnitude < 0.5f){
             done = true;
             pressed += 1;
             AudioSource.PlayClipAtPoint(buttonSound, transform.position);

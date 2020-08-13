@@ -141,7 +141,7 @@ public class EnemyNavMesh : MonoBehaviour
 
     bool CanSeePlayer()
     {
-        Vector3 targetPoint = pb.chars[pb.activeChar].transform.position;
+        Vector3 targetPoint = pb.chars[PlayerBehavior.activeChar].transform.position;
         Vector3 posDifference = targetPoint - transform.position - 0.5f * Vector3.up;
         
         //Vector3 pointConvert = transform.InverseTransformPoint(targetPoint);
@@ -156,7 +156,7 @@ public class EnemyNavMesh : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position + 0.5f * Vector3.up, (posDifference).normalized, out hit)) 
             {
-                if (hit.collider.name == pb.chars[pb.activeChar].name)
+                if (hit.collider.name == pb.chars[PlayerBehavior.activeChar].name)
                 {
                     lastPos = new Vector3(targetPoint.x, transform.position.y, targetPoint.z);
                     agent.SetDestination(lastPos);
@@ -191,7 +191,7 @@ public class EnemyNavMesh : MonoBehaviour
     {
         if (CanSeePlayer()) 
         {
-            Vector3 targetPoint = pb.chars[pb.activeChar].transform.position;
+            Vector3 targetPoint = pb.chars[PlayerBehavior.activeChar].transform.position;
             Vector3 posDifference = targetPoint - transform.position;
             if (posDifference.magnitude < attackRange)
             {
