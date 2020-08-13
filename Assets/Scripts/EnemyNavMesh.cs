@@ -255,7 +255,7 @@ public class EnemyNavMesh : MonoBehaviour
 
     public void Stun()
     {
-        if (state != 2 & state != 3)
+        if (state != 1 & state != 2)
         {
             counter = 0;
             state = 5;
