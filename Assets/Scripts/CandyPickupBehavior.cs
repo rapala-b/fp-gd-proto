@@ -20,7 +20,7 @@ public class CandyPickupBehavior : MonoBehaviour
             Vector3 candyPosition = transform.position;
             AudioSource.PlayClipAtPoint(candyCollectSFX, candyPosition);
             Destroy(gameObject, 2);
-            LevelManager.candiesFoundCount++;
+            LevelManager.candiesFoundInLevel++;
         }
     }
 }

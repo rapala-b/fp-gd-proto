@@ -11,13 +11,18 @@ public class LevelManager : MonoBehaviour
     public string nextLevel;
     public Text gameText;
     public Text candyCountText;
+    public Text cageButtonText;
     public float levelLoadDuration = 2;
 
-    int candiesCount;
+    //int candiesCount;
 
     // Gamewide:
-    public static int candiesFoundCount = 0;
     public static bool isGameOver = false;
+    public static int currentLevel = 1;
+    int totalCandiesFound = 0;
+
+    // Current Level Variables
+    public static int candiesFoundInLevel = 0;
 
     // Level2 (possibly rewrite Level1 to reuse this)
     public static int keysCollected = 0;
@@ -34,6 +39,10 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         SetCandyCounterText();
+        if (currentLevel == 1)
+        {
+            SetCageButtonText();
+        }
     }
 
     void InitializeLevel()
@@ -41,7 +50,7 @@ public class LevelManager : MonoBehaviour
         isGameOver = false;
         keysCollected = 0;
         isCatFreed = false;
-        candiesCount = CandyPickupBehavior.candiesCount;
+        //candiesCount = CandyPickupBehavior.candiesCount;
         SetCandyCounterText();
     }
 
@@ -51,6 +60,16 @@ public class LevelManager : MonoBehaviour
         gameText.text = "Game Over...";
         gameText.gameObject.SetActive(true);
 
+        //Reset Game Values
+        ResetLevelVariables();
+
+        //Reset Level 1 Values
+        if (currentLevel == 1)
+        {
+            CageButton.cageButtonsPressed = 0;
+        }
+
+
         AudioSource.PlayClipAtPoint(levelLostSFX, Camera.main.transform.position);
 
         Invoke("LoadCurrentLevel", levelLoadDuration);
@@ -59,12 +78,21 @@ public class LevelManager : MonoBehaviour
     public void LevelBeat()
     {
         isGameOver = true;
-        gameText.text = "You Won!";
+        gameText.text = "LEVEL BEAT";
         gameText.gameObject.SetActive(true);
+
+        // Update Variables
+        totalCandiesFound += candiesFoundInLevel;
+        ResetLevelVariables();
 
         AudioSource.PlayClipAtPoint(levelBeatSFX, Camera.main.transform.position);
 
         Invoke("LoadNextLevel", levelLoadDuration);
+    }
+
+    void ResetLevelVariables()
+    {
+        candiesFoundInLevel = 0;
     }
 
     void LoadCurrentLevel()
@@ -75,12 +103,19 @@ public class LevelManager : MonoBehaviour
     void LoadNextLevel()
     {
         SceneManager.LoadScene(nextLevel);
+        currentLevel += 1;
     }
 
     void SetCandyCounterText()
     {
-        candyCountText.text = "Candies: " + candiesFoundCount.ToString() + "/" 
-            + candiesCount.ToString();
+        candyCountText.text = "Candies: " + candiesFoundInLevel.ToString() + "/" 
+            + CandyPickupBehavior.candiesCount.ToString();
+    }
+
+    void SetCageButtonText()
+    {
+        cageButtonText.text = "Cage Buttons Activated: " + CageButton.cageButtonsPressed.ToString() + "/"
+            + CageButton.cageButtonCount.ToString();
     }
 
     public void freeCat()

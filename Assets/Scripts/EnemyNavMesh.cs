@@ -9,14 +9,15 @@ public class EnemyNavMesh : MonoBehaviour
 {
     public Vector3[] patrolPoints;
     public AudioClip alertSound;
-    public AudioClip playerCaptured;
+    public AudioClip playerCapturedSFX;
 
     // vision will be a cone of length viewRange and angle viewAngle
 
-    public float viewRange;
-    public float viewAngle;
-    public float moveSpeed;
-    public float attackRange;
+    public Transform enemyEyes;
+    public float viewRange = 2; // Also chase range
+    public float viewAngle = 100f;
+    public float moveSpeed = 0.5f;
+    public float attackRange = 0.5f;
 
     public float stunTime;
     public float searchTime;
@@ -28,20 +29,17 @@ public class EnemyNavMesh : MonoBehaviour
 
     PlayerBehavior pb;
     Animator anim;
+    bool playerCaptured = false;
 
-    // OLD: 0=stationed, 1=chasing, 2=chase reorient, 3=searching, 4=returning, 5=stunned;
-    // 
     // NEW: 0=stationed, 1=chasing, 2=attacking, 3=searching, 4=patrolling, 5=stunned;
     int state;
 
     int currentLook = 0;
     int currentPoint = 0;
     float counter = 0;
+    float originalViewRange;
 
-    // vertices of the view triangle relative to current position, counterclockwise
-    // Vector2[] triangle = {Vector2.zero, Vector2.zero, Vector2.zero};
     Vector3 lastPos;
-    //float angle;
 
     // Start is called before the first frame update
     void Start()
@@ -50,23 +48,21 @@ public class EnemyNavMesh : MonoBehaviour
         //angle = (180 - viewAngle) / 2 * Mathf.Deg2Rad;
         currentLook = 0;
         counter = 0;
-
-        //triangle[0] = new Vector2(0, 0);
-        //triangle[1] = new Vector2(viewRange / Mathf.Tan(angle), viewRange);
-        //triangle[2] = new Vector2(-1 * viewRange / Mathf.Tan(angle), viewRange);
+        originalViewRange = viewRange;
 
         pb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehavior>();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        AIUpdate();
-        Debug.Log(state);
+        if (!playerCaptured)
+        {
+            AIUpdate();
+            //Debug.Log(state);
+        }
     }
 
     void AIUpdate()
@@ -74,37 +70,33 @@ public class EnemyNavMesh : MonoBehaviour
         if (state == 0)
         {
             Stationed();
-            anim.SetInteger("animState", -1);
         }
         else if (state == 1)
         {
             Chase();
-            //anim.SetInteger("animState", 1);
         }
         else if (state == 2)
         {
             Attack();
-            //anim.SetInteger("animState", 1);
+            //anim.SetInteger("animState", 4);
         }
         else if (state == 3)
         {
             Search();
-            anim.SetInteger("animState", 1);
         }
         else if (state == 4)
         {
             Patrol();
-            anim.SetInteger("animState", 1);
         }
         else if (state == 5)
         {
             Stunned();
-            anim.SetInteger("animState", 0);
         }
     }
 
     void Stationed()
     {
+        anim.SetInteger("animState", 0);
         agent.speed = 0;
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(new Vector3(0, lookCycle[currentLook], 0)), Time.deltaTime * 120);
         if (Mathf.Abs(transform.rotation.eulerAngles.y - lookCycle[currentLook]) < 10)
@@ -120,10 +112,7 @@ public class EnemyNavMesh : MonoBehaviour
                     currentPoint = (currentPoint + 1) % patrolPoints.Length;
                 }
             }
-
             // will eventually need a second counter for lerping between rotations
-
-            
         }
         if (CanSeePlayer())
         {
@@ -139,11 +128,11 @@ public class EnemyNavMesh : MonoBehaviour
         return (p1.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (p1.y - p3.y);
     }
 
+
     bool CanSeePlayer()
     {
         Vector3 targetPoint = pb.chars[PlayerBehavior.activeChar].transform.position;
         Vector3 posDifference = targetPoint - transform.position - 0.5f * Vector3.up;
-        
         //Vector3 pointConvert = transform.InverseTransformPoint(targetPoint);
 
         if (posDifference.magnitude > viewRange)
@@ -154,13 +143,14 @@ public class EnemyNavMesh : MonoBehaviour
         if (Vector3.Angle(posDifference, transform.forward) <= viewAngle / 2)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position + 0.5f * Vector3.up, (posDifference).normalized, out hit)) 
+            if (Physics.Raycast(transform.position + 0.5f * Vector3.up, (posDifference).normalized, out hit, viewRange)) 
             {
                 if (hit.collider.name == pb.chars[PlayerBehavior.activeChar].name)
                 {
                     lastPos = new Vector3(targetPoint.x, transform.position.y, targetPoint.z);
                     agent.SetDestination(lastPos);
                     counter = 0;
+                    Debug.Log("Soldier can see player");
                     return true;
                 }
             }
@@ -168,29 +158,16 @@ public class EnemyNavMesh : MonoBehaviour
         return false;
     }
 
-    // checks if a relative point is in the relative look triangle
-    
-    /*
-    bool PointInTriangle (Vector2 point)
-    {
-        float d1, d2, d3;
-        bool has_neg, has_pos;
-
-        d1 = sign(point, triangle[0], triangle[1]);
-        d2 = sign(point, triangle[1], triangle[2]);
-        d3 = sign(point, triangle[2], triangle[0]);
-
-        has_neg = (d1 < 0) || (d2 < 0) || (d3 < 0);
-        has_pos = (d1 > 0) || (d2 > 0) || (d3 > 0);
-
-        return !(has_neg && has_pos);
-    }
-    */
-
     void Chase()
     {
         if (CanSeePlayer()) 
         {
+            anim.SetInteger("animState", 2);
+
+            //Move faster while chasing and increase FOV
+            agent.speed = moveSpeed * 1.9f;
+            viewAngle = viewAngle * 1.5f;
+
             Vector3 targetPoint = pb.chars[PlayerBehavior.activeChar].transform.position;
             Vector3 posDifference = targetPoint - transform.position;
             if (posDifference.magnitude < attackRange)
@@ -201,6 +178,7 @@ public class EnemyNavMesh : MonoBehaviour
         }
         else
         {
+            //agent.speed = moveSpeed;
             counter = 0;
             state = 3;
         }
@@ -229,11 +207,16 @@ public class EnemyNavMesh : MonoBehaviour
     void Search()
     {
         // come up with a nicer looking search later
+        anim.SetInteger("animState", 2);
+
         transform.LookAt(lastPos);
         counter += Time.deltaTime;
         if (counter > searchTime || (transform.position - lastPos).magnitude < 0.1f)
         {
             state = 0;
+            //Reset view range and move speed
+            viewRange = originalViewRange;
+            agent.speed = moveSpeed;
         }
         if (CanSeePlayer())
         {
@@ -245,6 +228,8 @@ public class EnemyNavMesh : MonoBehaviour
 
     void Patrol()
     {
+        anim.SetInteger("animState", 1);
+
         agent.SetDestination(patrolPoints[currentPoint]);
         if (CanSeePlayer())
         {
@@ -260,6 +245,7 @@ public class EnemyNavMesh : MonoBehaviour
 
     void Stunned()
     {
+        anim.SetInteger("animState", 5);
         counter += Time.deltaTime;
         if (counter > stunTime)
         {
@@ -281,9 +267,17 @@ public class EnemyNavMesh : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            AudioSource.PlayClipAtPoint(playerCaptured, transform.position);
-            FindObjectOfType<LevelManager>().LevelLost();
-            Debug.Log("Player captured, level over");
+            playerCaptured = true;
+            anim.SetInteger("animState", 3);
+            Debug.Log("Set animation to 3");
+            AudioSource.PlayClipAtPoint(playerCapturedSFX, transform.position);
+            Invoke("EndGame", 1.5f);
         }
+    }
+
+    private void EndGame()
+    {
+        FindObjectOfType<LevelManager>().LevelLost();
+        Debug.Log("Player captured, level over");
     }
 }
