@@ -83,9 +83,11 @@ public class LevelManager : MonoBehaviour
             PlayerBehavior.status[1] = -1;
         }
 
-        KeyBehavior.numberOfKeysInLevel = 0;
-        KeyBehavior.numberOfKeysCollected = 0;
-
+        if (currentLevel == 2)
+        {
+            KeyBehavior.numberOfKeysInLevel = 0;
+            KeyBehavior.numberOfKeysCollected = 0;
+        }
 
         AudioSource.PlayClipAtPoint(levelLostSFX, Camera.main.transform.position);
 
