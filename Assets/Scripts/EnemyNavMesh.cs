@@ -273,6 +273,10 @@ public class EnemyNavMesh : MonoBehaviour
             AudioSource.PlayClipAtPoint(playerCapturedSFX, transform.position);
             Invoke("EndGame", 1.5f);
         }
+        else if (other.CompareTag("Pet1") || other.CompareTag("Pet2") || other.CompareTag("Pet3"))
+        {
+            pb.Damage(PlayerBehavior.activeChar);
+        }
     }
 
     private void EndGame()

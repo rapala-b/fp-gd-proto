@@ -48,4 +48,8 @@ MonoBehaviour:
   nextLevel: First Floor
   gameText: {fileID: 0}
   candyCountText: {fileID: 0}
+  cageButtonText: {fileID: 0}
+  keyCountText: {fileID: 0}
   levelLoadDuration: 2
+  controlTipPrefab: {fileID: 9131353796196993950, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+    type: 3}

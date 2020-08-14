@@ -32,7 +32,7 @@ public class FrogBehavior : MonoBehaviour
                 anim.SetInteger("state", 0);
             }
 
-            if (Input.GetButton("Fire1"))
+            if (Input.GetKeyDown("e"))
             {
                 if (timer >= attackSpeed)
                 {

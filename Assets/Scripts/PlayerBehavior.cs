@@ -129,17 +129,18 @@ public class PlayerBehavior : MonoBehaviour
             }
         }
         */
-        
-        if (activeChar == 0)
+        chars[target].SetActive(false);
+        status[target] = 0;
+
+        if (activeChar != 0)
         {
-            chars[target].SetActive(false);
-            status[target] = 0;
+            SwitchControl(0);
         }
 
         //charPanel.UpdatePanels();
     }
 
-    void Damage(int target)
+    public void Damage(int target)
     {
         if (target == 0)
         {
@@ -150,8 +151,9 @@ public class PlayerBehavior : MonoBehaviour
         }
         else 
         {
+            status[target] = 0;
             chars[activeChar].SetActive(false);
-            activeChar = 0;
+            SwitchControl(0);
         }
 
         //charPanel.UpdatePanels();

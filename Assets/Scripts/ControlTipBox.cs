@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ControlTipBox : MonoBehaviour
 {
-    public float fadeTime = 1;
+    public float fadeTime = 0.5f;
     float bestRange;
     Text tipBox;
 
@@ -15,7 +15,7 @@ public class ControlTipBox : MonoBehaviour
     void Start()
     {
         tipBox = gameObject.GetComponent<Text>();
-        bestRange = 10000;
+        bestRange = 100000;
         time = 0;
     }
 
@@ -25,7 +25,7 @@ public class ControlTipBox : MonoBehaviour
         if (time > fadeTime)
         {
             tipBox.enabled = false;
-            bestRange = 10000;
+            bestRange = 100000;
         }
         else
         {
@@ -39,6 +39,7 @@ public class ControlTipBox : MonoBehaviour
     {
         if(range < bestRange)
         {
+            time = 0;
             tipBox.enabled = true;
             bestRange = range;
             tipBox.text = message;

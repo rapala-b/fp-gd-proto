@@ -15,7 +15,10 @@ public class LevelManager : MonoBehaviour
     public Text keyCountText;
     public float levelLoadDuration = 2;
 
+    public GameObject controlTipPrefab;
+
     //int candiesCount;
+    bool cageTipsLoaded = false;
 
     // Gamewide:
     public static bool isGameOver = false;
@@ -126,12 +129,37 @@ public class LevelManager : MonoBehaviour
     {
         cageButtonText.text = "Cage Buttons Activated: " + CageButton.cageButtonsPressed.ToString() + "/"
             + CageButton.cageButtonCount.ToString();
+
+        if (CageButton.cageButtonsPressed == 3 & cageTipsLoaded == false)
+        {
+            LoadCageButtonTips();
+            cageTipsLoaded = true;
+        }
     }
 
     void SetKeyCounterText()
     {
         keyCountText.text = "Keys Collected: " + KeyBehavior.numberOfKeysCollected.ToString() + "/"
             + KeyBehavior.numberOfKeysInLevel.ToString();
+    }
+
+    public void LoadCageButtonTips()
+    {
+        GameObject cb1 = GameObject.Instantiate(controlTipPrefab, Vector3.forward * 1000, Quaternion.identity);
+        ControlTip ct1 = cb1.GetComponent<ControlTip>();
+        ct1.message = "Scroll: select character";
+        ct1.destroyKey = "scroll";
+
+        GameObject cb2 = GameObject.Instantiate(controlTipPrefab, Vector3.forward * 1100, Quaternion.identity);
+        ControlTip ct2 = cb2.GetComponent<ControlTip>();
+        ct2.message = "F: switch to selected character";
+        ct2.destroyKey = "f";
+
+        GameObject cb3 = GameObject.Instantiate(controlTipPrefab, Vector3.forward * 1200, Quaternion.identity);
+        ControlTip ct3 = cb3.GetComponent<ControlTip>();
+        ct3.message = "R: recall selected stuffed animal";
+        ct3.destroyKey = "r";
+
     }
 
     //public void freeCat()

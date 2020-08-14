@@ -30,6 +30,7 @@ public class CageButton : MonoBehaviour
             if (cageButtonsPressed == cageButtonCount) {
                 PlayerBehavior.status[1] = 1; // Make elephant active
                 GameObject.Destroy(GameObject.FindGameObjectWithTag("Cage"));
+                
             }
         }
     }

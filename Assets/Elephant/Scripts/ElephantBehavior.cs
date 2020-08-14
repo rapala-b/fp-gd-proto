@@ -26,7 +26,7 @@ public class ElephantBehavior : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetButton("Fire1") && PlayerBehavior.activeChar == 1) {
+        if(Input.GetKeyDown("e") && PlayerBehavior.activeChar == 1) {
             if(timer >= sprayCountDown && shotNum > 0) {
                 GameObject water = Instantiate(waterParticle, waterSprayPoint.position, transform.rotation) as GameObject;
                 Destroy(water, 3f);
@@ -35,7 +35,7 @@ public class ElephantBehavior : MonoBehaviour
             }
         }
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 1)) {
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1)) {
             if(hit.transform.CompareTag("WaterSource")) {
                 shotNum = 3;
             }

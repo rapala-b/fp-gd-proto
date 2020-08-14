@@ -22,7 +22,7 @@ public class CatBehavior : MonoBehaviour
     {
         if (PlayerBehavior.activeChar == 2) {
 
-            if (Input.GetButton("Fire1"))
+            if (Input.GetKeyDown("e"))
             {
                 Attack();
             }
@@ -37,16 +37,15 @@ public class CatBehavior : MonoBehaviour
         }
     }
     void Attack() {
-        RaycastHit hit;
        
         Debug.Log("Cat attack");
         anim.StopPlayback();
         anim.SetInteger("animState", 2);
 
-        if (Physics.Raycast(transform.position, catEye.forward, out hit, attackRange)) {
-            if(hit.transform.gameObject.GetComponent<EnemyStationary>() != null) {
+        foreach (RaycastHit hit in (Physics.SphereCastAll(transform.position + transform.forward, 1, transform.forward))) {
+            if(hit.transform.gameObject.GetComponent<EnemyNavMesh>() != null) {
                 Debug.Log("Enemy Hit by cat");
-                hit.transform.gameObject.GetComponent<EnemyStationary>().Stun();
+                hit.transform.gameObject.GetComponent<EnemyNavMesh>().Stun();
             }
         }
     }

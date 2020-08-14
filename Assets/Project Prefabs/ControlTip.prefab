@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b195eabd4c59ed4ebdb114e29a521b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: 
-  destroyKey: None
+  message: test
+  destroyKey: none
   duration: -1
   range: -1

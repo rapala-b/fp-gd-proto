@@ -16,7 +16,7 @@ public class PlayerCamera : MonoBehaviour
     public static float vertical = 0;
 
     public Text inspectBox;
-    public float inspectFadeTime = 8;
+    public float inspectFadeTime = 3;
 
     float inspectTimer;
     
@@ -62,6 +62,8 @@ public class PlayerCamera : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(vertical, currentRota.y, currentRota.z);
 
+        HandleInspect();
+
     }
 
     void HandleInspect()
@@ -76,10 +78,9 @@ public class PlayerCamera : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
-            Vector3 inspectStart = transform.position + (transform.forward * 2);
-            if (Physics.Raycast(inspectStart, transform.forward, out hit, 15))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 15, LayerMask.GetMask(new string[]{"Default"})))
             {
-                Inspectable maybeInteract = hit.collider.GetComponent<Inspectable>();
+                Inspectable maybeInteract = hit.collider.gameObject.GetComponentInParent<Inspectable>();
                 if (maybeInteract != null)
                 {
                     inspectTimer = 0;

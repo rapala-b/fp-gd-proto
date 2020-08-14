@@ -112,8 +112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   relativePlacement: {x: 0, y: 0.3, z: -1}
   focus: {fileID: 0}
-  minVertical: 10
-  maxVertical: 20
+  minVertical: -40
+  maxVertical: 40
   senseHorizontal: 1
   senseVertical: 0.5
   inspectBox: {fileID: 0}

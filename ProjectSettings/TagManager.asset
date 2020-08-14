@@ -14,6 +14,9 @@ TagManager:
   - Light
   - CatCage
   - FrogCage
+  - Pet2
+  - Pet3
+  - TipBox
   layers:
   - Default
   - TransparentFX
