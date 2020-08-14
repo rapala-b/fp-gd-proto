@@ -11,8 +11,8 @@ public class LevelCheckpoint : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player")) {
-            switch (LevelManager.currentLevel)
+        if (other.CompareTag("Player") || other.CompareTag("Pet1") || other.CompareTag("Pet2") || other.CompareTag("Pet3")) {
+            switch (SceneManager.GetActiveScene().buildIndex)
             {
                 case 0:
                     // main menu, do nothing
@@ -27,28 +27,11 @@ public class LevelCheckpoint : MonoBehaviour
                     LevelThree();
                     break;
             }
-
-            // if (LevelManager.currentLevel == 1)
-            // {
-            //     if (LevelManager.keysCollected != LevelManager.totalKeys)
-            //     {
-            //         Debug.Log("I need my Froggie and Kittie before I go down there...);
-            //     }
-            //     else
-            //     {
-            //         levelManager.LevelBeat();
-            //     }
-            // }
-            // else
-            // {
-            //     levelManager.LevelBeat();
-            // }
         }
     }
 
     private void LevelOne()
     {
-        Debug.Log("Level 1 beat");
         levelManager.LevelBeat();
     }
 

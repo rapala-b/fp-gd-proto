@@ -284,4 +284,13 @@ public class EnemyNavMesh : MonoBehaviour
         FindObjectOfType<LevelManager>().LevelLost();
         Debug.Log("Player captured, level over");
     }
+
+    private void OnDrawGizmos()
+    {
+        foreach (Vector3 point in patrolPoints)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(point, .25f);
+        }
+    }
 }

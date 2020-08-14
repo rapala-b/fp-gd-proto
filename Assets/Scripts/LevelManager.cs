@@ -73,12 +73,14 @@ public class LevelManager : MonoBehaviour
         gameText.gameObject.SetActive(true);
 
         //Reset Game Values
-        ResetLevelVariables();
+        candiesFoundInLevel = 0;
+        candiesInCurrentLevel = GameObject.FindGameObjectsWithTag("Candy").Length;
 
         //Reset Level 1 Values
         if (currentLevel == 1)
         {
             CageButton.cageButtonsPressed = 0;
+            PlayerBehavior.status[1] = -1;
         }
 
 
@@ -101,10 +103,22 @@ public class LevelManager : MonoBehaviour
         Invoke("LoadNextLevel", levelLoadDuration);
     }
 
-    void ResetLevelVariables()
+    void SetLevelVariables()
     {
         candiesFoundInLevel = 0;
         candiesInCurrentLevel = GameObject.FindGameObjectsWithTag("Candy").Length;
+
+        if (currentLevel == 2)
+        {
+            PlayerBehavior.status[1] = 1; //Set elephant to be active
+        }
+
+        if (currentLevel == 3)
+        {
+            PlayerBehavior.status[1] = 1; //Set elephant to be active
+            PlayerBehavior.status[2] = 1; //Set cat to be active
+            PlayerBehavior.status[3] = 1; //Set frog to be active
+        }
     }
 
     void LoadCurrentLevel()
@@ -116,7 +130,7 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(nextLevel);
         currentLevel += 1;
-        ResetLevelVariables();
+        SetLevelVariables();
     }
 
     void SetCandyCounterText()
