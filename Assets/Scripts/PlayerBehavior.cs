@@ -12,7 +12,7 @@ public class PlayerBehavior : MonoBehaviour
    
     // animals now get recalled upon damage
     //public int[] health = {3, 3};
-    public static int[] status = {1, -1, -1, -1};
+    public static int[] status = {1, 1, 1, 1};
     public static int activeChar = 0;
     public GameObject[] chars = {null, null};
    
@@ -63,18 +63,35 @@ public class PlayerBehavior : MonoBehaviour
 
             if (Input.GetButton("Jump"))
             {
-                moveVector.y = Mathf.Sqrt(2 * jumpHeight * gravity);
-                anim.SetInteger("animState", 2);
+
+                if (activeChar == 3)
+                {
+                    moveVector.y = Mathf.Sqrt(2 * FrogBehavior.frogJumpHeight * gravity);
+                } else
+                {
+                    moveVector.y = Mathf.Sqrt(2 * jumpHeight * gravity);
+                }
+
+                if (activeChar == 0)
+                {
+                    anim.SetInteger("animState", 2);
+                }
             }
             else { 
                 moveVector.y = 0.0f;
                 if (moveVector == Vector3.zero)
                 {
-                    anim.SetInteger("animState", 0);
+                    if (activeChar == 0)
+                    {
+                        anim.SetInteger("animState", 0);
+                    }
                 }
                 else
                 {
-                    anim.SetInteger("animState", 1);
+                    if (activeChar == 0)
+                    {
+                        anim.SetInteger("animState", 1);
+                    }
                 }
             }
         }
@@ -83,7 +100,6 @@ public class PlayerBehavior : MonoBehaviour
             // Player is in air
             moveVector.x = lateralMove.x * airspeed / speed;
             moveVector.z = lateralMove.z * airspeed / speed;
-            //anim.SetInteger("animState", 3);
         }
         moveVector.y -= gravity * Time.deltaTime;
 
@@ -161,7 +177,13 @@ public class PlayerBehavior : MonoBehaviour
 
     bool CheckGrounded()
     {//Judge whether current character is on the ground or not
-        Ray ray = new Ray(chars[activeChar].transform.position + Vector3.up * 0.05f, Vector3.down * 0.1f);//Shoot ray at 0.05f upper from Junkochan's feet position to the ground with its length of 0.1f
-        return Physics.Raycast(ray, 0.05f);//If the ray hit the ground, return true
+        if (activeChar == 0)
+        {
+            Ray ray = new Ray(chars[activeChar].transform.position + Vector3.up * 0.05f, Vector3.down * 0.1f);//Shoot ray at 0.05f upper from Junkochan's feet position to the ground with its length of 0.1f
+            return Physics.Raycast(ray, 0.05f);//If the ray hit the ground, return true
+        } else
+        {
+            return controller.isGrounded;
+        }
     }
 }

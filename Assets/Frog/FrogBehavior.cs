@@ -6,6 +6,7 @@ public class FrogBehavior : MonoBehaviour
 {
 
     public Transform tonguePosition;
+    public static int frogJumpHeight = 4;
     Animator anim;
     CharacterController controller;
 
@@ -47,14 +48,28 @@ public class FrogBehavior : MonoBehaviour
     }
 
     void Tongue() {
+        
         RaycastHit hit;
-
         if(Physics.Raycast(tonguePosition.position, tonguePosition.forward, out hit, 2f)) {
             if(hit.rigidbody != null) {
                 hit.rigidbody.AddForce((transform.position - hit.transform.position)  * 200);
             }
+            if(hit.collider.CompareTag("LightSwitch"))
+            {
+                Debug.Log("Lightswitch hit");
+                hit.collider.GetComponentInParent<LightswitchBehavior>().TurnOnLights();
+            }
         }
-        
+
+/*        foreach (RaycastHit hit in (Physics.SphereCastAll(transform.position + tonguePosition.forward * 0.3f, 0.3f, 1)))
+        {
+            if (hit.collider.CompareTag("LightSwitch"))
+            {
+                Debug.Log("Enemy Hit by cat");
+                hit.transform.gameObject.GetComponent<EnemyNavMesh>().Stun();
+            }
+        }*/
+
     }
 
     private void OnDrawGizmos() {

@@ -52,6 +52,11 @@ public class ElephantBehavior : MonoBehaviour
         if (hit.gameObject.CompareTag("Box")) {
             Destroy(hit.gameObject);
         }
+
+        if (hit.gameObject.CompareTag("Pipe"))
+        {
+            hit.gameObject.GetComponent<WaterPipeBehavior>().BreakPipe();
+        }
     }
 
     void HandleWaterUI()
@@ -88,10 +93,6 @@ public class ElephantBehavior : MonoBehaviour
                 water2.color = Color.white;
                 water3.color = Color.white;
                 break;
-
-                
-                
-
             }
         }
     }
