@@ -12,7 +12,7 @@ public class PlayerBehavior : MonoBehaviour
    
     // animals now get recalled upon damage
     //public int[] health = {3, 3};
-    public static int[] status = {1, -1, -1, -1};
+    public static int[] status = {1, 1, -1, -1};
     public static int activeChar = 0;
     public GameObject[] chars = {null, null};
    

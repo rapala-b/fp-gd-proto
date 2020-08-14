@@ -157,6 +157,8 @@
     <Compile Include="Assets\Scripts\CageButton.cs" />
     <Compile Include="Assets\Scripts\CandyPickupBehavior.cs" />
     <Compile Include="Assets\Scripts\CharPanel.cs" />
+    <Compile Include="Assets\Scripts\ControlTip.cs" />
+    <Compile Include="Assets\Scripts\ControlTipBox.cs" />
     <Compile Include="Assets\Scripts\EnemyBehavior.cs" />
     <Compile Include="Assets\Scripts\EnemyNavMesh.cs" />
     <Compile Include="Assets\Scripts\EnemyStationary.cs" />
