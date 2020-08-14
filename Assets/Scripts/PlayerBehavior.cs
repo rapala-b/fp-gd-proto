@@ -9,11 +9,13 @@ public class PlayerBehavior : MonoBehaviour
     public float jumpHeight = 5;
     public float gravity = 9.8f;
     public int health = 3;
+   
     // animals now get recalled upon damage
     //public int[] health = {3, 3};
-    public int[] status = {1, -1, -1, -1};
+    public static int[] status = {1, -1, -1, -1};
     public static int activeChar = 0;
     public GameObject[] chars = {null, null};
+   
     public CharPanel charPanel;
 
     PlayerCamera playerCamera;

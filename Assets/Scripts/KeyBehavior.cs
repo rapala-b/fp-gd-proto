@@ -8,38 +8,68 @@ public class KeyBehavior : MonoBehaviour
     public float amplitude = 0.25f;
     public float frequency = 0.5f;
     public AudioClip keyPickupSFX;
-    public AudioClip cageUnlockedSFX;
-    public GameObject cagedOpenPrefab;
 
     Vector3 tempPosition = new Vector3();
     Vector3 offset = new Vector3();
-    LevelManager LevelManager;
+
+    public static int numberOfKeysInLevel;
+    public static int numberOfKeysCollected = 0;
+
+    public int numberOfKeysToFreeCat = 4;
+
+    bool catFree = false;
+    bool frogFree = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        LevelManager.totalKeys++;
+        numberOfKeysInLevel++;
         offset = transform.position;
-        LevelManager = GameObject.FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         animateKey();
-        //LevelManager.freeCat();
     }
 
     private void OnTriggerEnter(Collider other) 
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            LevelManager.keysCollected++;
-            LevelManager.freeCat();
-            AudioSource.PlayClipAtPoint(keyPickupSFX, Camera.main.transform.position);
+            numberOfKeysCollected++;
             gameObject.GetComponent<Renderer>().enabled = false;
             Destroy(gameObject, 0.5f);
+            AudioSource.PlayClipAtPoint(keyPickupSFX, Camera.main.transform.position);
+
+            if (numberOfKeysCollected == numberOfKeysInLevel && !frogFree)
+            {
+                UnlockFrogCage();
+            } else if (numberOfKeysCollected == numberOfKeysToFreeCat && !catFree)
+            {
+                UnlockCatCage();
+            }
         }
+    }
+
+    private void UnlockCatCage()
+    {
+        Debug.Log("Cat cage unlocked");
+        LevelManager.isCatFreed = true;
+        PlayerBehavior.status[2] = 1; //Make cat active
+        GameObject catCage = GameObject.FindGameObjectWithTag("CatCage");
+        catCage.GetComponent<CageBehavior>().UnlockCage();
+        GameObject.Destroy(catCage);
+    }
+
+    private void UnlockFrogCage()
+    {
+        Debug.Log("Frog cage unlocked");
+        LevelManager.isFrogFreed = true;
+        PlayerBehavior.status[3] = 1; //Make frog active
+        GameObject frogCage = GameObject.FindGameObjectWithTag("FrogCage");
+        frogCage.GetComponent<CageBehavior>().UnlockCage();
+        GameObject.Destroy(frogCage);
     }
 
     void animateKey()

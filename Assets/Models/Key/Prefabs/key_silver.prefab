@@ -110,7 +110,7 @@ MonoBehaviour:
   rotationSpeed: 100
   amplitude: 0.25
   frequency: 0.5
-  keyPickupSFX: {fileID: 8300000, guid: a5f5e1b3f95d9db44916be14766e5237, type: 3}
+  keyPickupSFX: {fileID: 8300000, guid: 25e7447af8046fe49ad4ae731369c37c, type: 3}
   cageUnlockedSFX: {fileID: 8300000, guid: fe142455f0c7ba9479ef739deecc7c1e, type: 3}
   cagedOpenPrefab: {fileID: 7152623727968191472, guid: 9e63e139600c03e4eae6342b204f46ff,
     type: 3}

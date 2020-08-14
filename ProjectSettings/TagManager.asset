@@ -12,6 +12,8 @@ TagManager:
   - Guts
   - WaterSource
   - Light
+  - CatCage
+  - FrogCage
   layers:
   - Default
   - TransparentFX

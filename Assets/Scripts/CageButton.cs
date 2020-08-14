@@ -28,7 +28,7 @@ public class CageButton : MonoBehaviour
             cageButtonsPressed += 1;
             AudioSource.PlayClipAtPoint(buttonSound, transform.position);
             if (cageButtonsPressed == cageButtonCount) {
-                playerBehavior.status[1] = 1;
+                PlayerBehavior.status[1] = 1; // Make elephant active
                 GameObject.Destroy(GameObject.FindGameObjectWithTag("Cage"));
             }
         }

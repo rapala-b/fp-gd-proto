@@ -559,7 +559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 282ecd503c37cbc478e028042829c94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pb: {fileID: 0}
   girlPanel: {fileID: 1942109174331330752}
   elePanel: {fileID: 1942109175681510702}
   catPanel: {fileID: 1942109174397469126}

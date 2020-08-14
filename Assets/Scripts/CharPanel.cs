@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class CharPanel : MonoBehaviour
 {
-    public PlayerBehavior pb;
     public GameObject girlPanel;
     public GameObject elePanel;
     public GameObject catPanel;
@@ -70,7 +69,7 @@ public class CharPanel : MonoBehaviour
     }
 
     public void UpdatePanels(){
-        int[] status = pb.status;
+        int[] status = PlayerBehavior.status;
         for (int i = 0; i < 4; i++)
         {
             switch (status[i]){
@@ -100,7 +99,7 @@ public class CharPanel : MonoBehaviour
     // amount to increase or decrease by
     void switchTarget(int delta)
     {
-        int length = Array.IndexOf(pb.status, -1);
+        int length = Array.IndexOf(PlayerBehavior.status, -1);
         if (length == -1) {length = 4;}
         target = (target + delta + length) % length;
         //UpdatePanels();
