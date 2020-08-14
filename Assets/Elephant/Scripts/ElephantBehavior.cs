@@ -53,8 +53,14 @@ public class ElephantBehavior : MonoBehaviour
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit) {
+       
         if (hit.gameObject.CompareTag("Box")) {
             Destroy(hit.gameObject);
+        }
+
+        if (hit.gameObject.CompareTag("Pipe"))
+        {
+            hit.gameObject.GetComponent<WaterPipeBehavior>().BreakPipe();
             AudioSource.PlayClipAtPoint(breakSound, transform.position);
         }
     }
@@ -93,10 +99,6 @@ public class ElephantBehavior : MonoBehaviour
                 water2.color = Color.white;
                 water3.color = Color.white;
                 break;
-
-                
-                
-
             }
         }
     }

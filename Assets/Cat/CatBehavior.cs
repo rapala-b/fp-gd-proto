@@ -9,6 +9,7 @@ public class CatBehavior : MonoBehaviour
     public GameObject nightLight;
     Animator anim;
     CharacterController controller;
+    bool nightVisionActive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,9 @@ public class CatBehavior : MonoBehaviour
     void Update()
     {
         if (PlayerBehavior.activeChar == 2) {
-            nightLight.SetActive(true);
+
+            nightLight.GetComponent<Light>().intensity = 10;
+            nightLight.SetActive(nightVisionActive);
 
             if (Input.GetKeyDown("e"))
             {
@@ -36,10 +39,11 @@ public class CatBehavior : MonoBehaviour
             else if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0)) {
                 anim.SetInteger("animState", 0);
             }
-        }
-        else
-        {
-            nightLight.SetActive(false);
+            
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                nightVisionActive = !nightVisionActive;
+            }
         }
     }
     void Attack() {

@@ -12,11 +12,23 @@ public class LightswitchBehavior : MonoBehaviour
     {
         lights = FindObjectsOfType(typeof(Light)) as Light[];
         Debug.Log("Number of Lights: " + (lights.Length - 1));
+        foreach (Light light in lights)
+        {
+            light.intensity = 0;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void TurnOnLights()
+    {
+        foreach (Light light in lights)
+        {
+            light.intensity = 1;
+        }
     }
 }

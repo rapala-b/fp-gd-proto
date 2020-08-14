@@ -17,6 +17,8 @@ TagManager:
   - Pet2
   - Pet3
   - TipBox
+  - LightSwitch
+  - Pipe
   layers:
   - Default
   - TransparentFX
