@@ -841,6 +841,8 @@ MonoBehaviour:
   water1: {fileID: 0}
   water2: {fileID: 0}
   water3: {fileID: 0}
+  waterSound: {fileID: 8300000, guid: 26a7ade9940744d4c8b323294b3f6a3f, type: 3}
+  breakSound: {fileID: 8300000, guid: a8d7b1b6f07183f4e92199bb2a901b18, type: 3}
 --- !u!1 &4429843852643615633
 GameObject:
   m_ObjectHideFlags: 0

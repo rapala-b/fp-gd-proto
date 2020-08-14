@@ -61,6 +61,7 @@ public class EnemyNavMesh : MonoBehaviour
         if (!playerCaptured)
         {
             AIUpdate();
+            counter += Time.deltaTime;
             //Debug.Log(state);
         }
     }
@@ -107,6 +108,7 @@ public class EnemyNavMesh : MonoBehaviour
                 currentLook = 0;
                 if (patrolPoints.Length != 1)
                 {
+                    counter = 0;
                     agent.speed = moveSpeed;
                     state = 4;
                     currentPoint = (currentPoint + 1) % patrolPoints.Length;
@@ -201,7 +203,7 @@ public class EnemyNavMesh : MonoBehaviour
     */
     void Attack()
     {
-
+        state = 1;
     }
 
     void Search()
@@ -210,7 +212,6 @@ public class EnemyNavMesh : MonoBehaviour
         anim.SetInteger("animState", 2);
 
         transform.LookAt(lastPos);
-        counter += Time.deltaTime;
         if (counter > searchTime || (transform.position - lastPos).magnitude < 0.1f)
         {
             state = 0;
@@ -236,7 +237,7 @@ public class EnemyNavMesh : MonoBehaviour
             AudioSource.PlayClipAtPoint(alertSound, transform.position);
             state = 1;
         }
-        if ((transform.position - patrolPoints[currentPoint]).magnitude < 0.5f)
+        if ((transform.position - patrolPoints[currentPoint]).magnitude < 0.5f  || counter > 15)
         {
             state = 0;
         }
@@ -246,7 +247,6 @@ public class EnemyNavMesh : MonoBehaviour
     void Stunned()
     {
         anim.SetInteger("animState", 5);
-        counter += Time.deltaTime;
         if (counter > stunTime)
         {
             state = 3;
@@ -265,17 +265,20 @@ public class EnemyNavMesh : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (state != 5)
         {
-            playerCaptured = true;
-            anim.SetInteger("animState", 3);
-            Debug.Log("Set animation to 3");
-            AudioSource.PlayClipAtPoint(playerCapturedSFX, transform.position);
-            Invoke("EndGame", 1.5f);
-        }
-        else if (other.CompareTag("Pet1") || other.CompareTag("Pet2") || other.CompareTag("Pet3"))
-        {
-            pb.Damage(PlayerBehavior.activeChar);
+            if (other.CompareTag("Player"))
+            {
+                playerCaptured = true;
+                anim.SetInteger("animState", 3);
+                Debug.Log("Set animation to 3");
+                AudioSource.PlayClipAtPoint(playerCapturedSFX, transform.position);
+                Invoke("EndGame", 1.5f);
+            }
+            else if (other.CompareTag("Pet1") || other.CompareTag("Pet2") || other.CompareTag("Pet3"))
+            {
+                pb.Damage(PlayerBehavior.activeChar);
+            }
         }
     }
 

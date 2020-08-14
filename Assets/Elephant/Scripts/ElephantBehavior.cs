@@ -12,6 +12,9 @@ public class ElephantBehavior : MonoBehaviour
     public Image water2;
     public Image water3;
 
+    public AudioClip waterSound;
+    public AudioClip breakSound;
+
     float sprayCountDown = 0.5f;
     float timer = 0f;
 
@@ -31,6 +34,7 @@ public class ElephantBehavior : MonoBehaviour
                 GameObject water = Instantiate(waterParticle, waterSprayPoint.position, transform.rotation) as GameObject;
                 Destroy(water, 3f);
                 timer = 0f;
+                AudioSource.PlayClipAtPoint(waterSound, transform.position);
                 shotNum--;
             }
         }
@@ -51,6 +55,7 @@ public class ElephantBehavior : MonoBehaviour
     private void OnControllerColliderHit(ControllerColliderHit hit) {
         if (hit.gameObject.CompareTag("Box")) {
             Destroy(hit.gameObject);
+            AudioSource.PlayClipAtPoint(breakSound, transform.position);
         }
     }
 
