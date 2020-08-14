@@ -2321,6 +2321,11 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1].z
       value: 6.45
       objectReference: {fileID: 0}
+    - target: {fileID: 6812661864360694542, guid: d408f27d9dbc5c34fadd40aa18d02b3e,
+        type: 3}
+      propertyPath: animalCapturedSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d15edb126ec57c42817d894396b63c7, type: 3}
     - target: {fileID: 7284703269448747914, guid: d408f27d9dbc5c34fadd40aa18d02b3e,
         type: 3}
       propertyPath: patrolPoints.Array.size
@@ -3296,12 +3301,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   relativePlacement: {x: 0, y: 0.3, z: -1}
   focus: {fileID: 1080310675}
-  minVertical: 10
-  maxVertical: 20
+  minVertical: -40
+  maxVertical: 40
   senseHorizontal: 1
   senseVertical: 0.5
   inspectBox: {fileID: 1498420291}
-  inspectFadeTime: 8
+  inspectFadeTime: 4
 --- !u!114 &754972522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4892,9 +4897,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1000011161387954, guid: 474e596dc3e339e42bef4bf139d2e520, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1000011938713744, guid: 474e596dc3e339e42bef4bf139d2e520, type: 3}
       propertyPath: m_Name
       value: PFB_DoorSingle_Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011938713744, guid: 474e596dc3e339e42bef4bf139d2e520, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000010780729136, guid: 474e596dc3e339e42bef4bf139d2e520, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4952,8 +4965,33 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.75
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 65000011887935670, guid: 474e596dc3e339e42bef4bf139d2e520,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 65000011887935670, guid: 474e596dc3e339e42bef4bf139d2e520, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 474e596dc3e339e42bef4bf139d2e520, type: 3}
+--- !u!1 &1143024402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000011938713744, guid: 474e596dc3e339e42bef4bf139d2e520,
+    type: 3}
+  m_PrefabInstance: {fileID: 1143024401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1143024403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143024402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: I can't go downstairs before rescuing Frog and Kitten!
 --- !u!1 &1146757029
 GameObject:
   m_ObjectHideFlags: 0
@@ -4990,25 +5028,6 @@ Transform:
   m_Father: {fileID: 32226025}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1147871396 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000011161387954, guid: 474e596dc3e339e42bef4bf139d2e520,
-    type: 3}
-  m_PrefabInstance: {fileID: 1143024401}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1147871397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147871396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  description: I can't go downstairs before rescuing Frog and Kitten!
 --- !u!1 &1174182456 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2749323962047206246, guid: 9908edc51ecab2449b1393aff492c005,
@@ -5976,7 +5995,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 529920782, guid: 757e3aea8e4f1f241a65c3c57cc388b2, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1850616988, guid: 757e3aea8e4f1f241a65c3c57cc388b2, type: 3}
       propertyPath: m_RootOrder
@@ -6102,6 +6121,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1942109175663707380, guid: 757e3aea8e4f1f241a65c3c57cc388b2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3676057635538950652, guid: 757e3aea8e4f1f241a65c3c57cc388b2,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -6176,7 +6200,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1498420285}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -7046,6 +7070,11 @@ PrefabInstance:
       propertyPath: water3
       value: 
       objectReference: {fileID: 1498420287}
+    - target: {fileID: 4429843851066082726, guid: b9e8e4608bb231f439dc3297e35a86ea,
+        type: 3}
+      propertyPath: breakSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8797f65430d522043894dc05f872e15f, type: 3}
     - target: {fileID: 4429843852643458991, guid: b9e8e4608bb231f439dc3297e35a86ea,
         type: 3}
       propertyPath: m_LocalPosition.x

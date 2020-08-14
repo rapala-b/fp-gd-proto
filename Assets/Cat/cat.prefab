@@ -1447,6 +1447,7 @@ MonoBehaviour:
   attackRange: 0.5
   catEye: {fileID: 2162482326837074281}
   nightLight: {fileID: 8734670262412560726}
+  catAttack: {fileID: 8300000, guid: cf033fb2480107649b42f708ad5b8991, type: 3}
 --- !u!1 &7071761468242034391
 GameObject:
   m_ObjectHideFlags: 0

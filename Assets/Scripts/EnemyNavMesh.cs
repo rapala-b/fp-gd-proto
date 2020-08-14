@@ -10,6 +10,7 @@ public class EnemyNavMesh : MonoBehaviour
     public Vector3[] patrolPoints;
     public AudioClip alertSound;
     public AudioClip playerCapturedSFX;
+    public AudioClip animalCapturedSFX;
 
     // vision will be a cone of length viewRange and angle viewAngle
 
@@ -265,7 +266,7 @@ public class EnemyNavMesh : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (state != 5)
+        if (state == 1 || state == 2 || state == 3)
         {
             if (other.CompareTag("Player"))
             {
@@ -278,6 +279,7 @@ public class EnemyNavMesh : MonoBehaviour
             else if (other.CompareTag("Pet1") || other.CompareTag("Pet2") || other.CompareTag("Pet3"))
             {
                 pb.Damage(PlayerBehavior.activeChar);
+                AudioSource.PlayClipAtPoint(animalCapturedSFX, transform.position);
             }
         }
     }

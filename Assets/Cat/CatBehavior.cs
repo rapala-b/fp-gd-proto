@@ -7,6 +7,8 @@ public class CatBehavior : MonoBehaviour
     public float attackRange = 0.5f;
     public Transform catEye;
     public GameObject nightLight;
+    public AudioClip catAttack;
+
     Animator anim;
     CharacterController controller;
     bool nightVisionActive = true;
@@ -56,6 +58,7 @@ public class CatBehavior : MonoBehaviour
             if(hit.transform.gameObject.GetComponent<EnemyNavMesh>() != null) {
                 Debug.Log("Enemy Hit by cat");
                 hit.transform.gameObject.GetComponent<EnemyNavMesh>().Stun();
+                AudioSource.PlayClipAtPoint(catAttack, transform.position);
             }
         }
     }
