@@ -76,7 +76,12 @@ public class LevelCheckpoint : MonoBehaviour
 
     private void LevelThree()
     {
-        Debug.Log("Level Three Beat");
-        levelManager.LevelBeat();
+        if (GameObject.FindGameObjectsWithTag("Fire") == null)
+        {
+            levelManager.LevelBeat();
+        } else
+        {
+            Debug.Log("I need to put the fires out!");
+        }
     }
 }
