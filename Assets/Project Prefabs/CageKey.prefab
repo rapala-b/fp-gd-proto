@@ -111,4 +111,6 @@ MonoBehaviour:
   amplitude: 0.25
   frequency: 0.5
   keyPickupSFX: {fileID: 8300000, guid: 25e7447af8046fe49ad4ae731369c37c, type: 3}
+  controlTipPrefab: {fileID: 9131353796196993950, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+    type: 3}
   numberOfKeysToFreeCat: 4

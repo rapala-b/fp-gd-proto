@@ -8,6 +8,7 @@ public class KeyBehavior : MonoBehaviour
     public float amplitude = 0.25f;
     public float frequency = 0.5f;
     public AudioClip keyPickupSFX;
+    public GameObject controlTipPrefab;
 
     Vector3 tempPosition = new Vector3();
     Vector3 offset = new Vector3();
@@ -45,9 +46,17 @@ public class KeyBehavior : MonoBehaviour
             if (numberOfKeysCollected == numberOfKeysInLevel && !frogFree)
             {
                 UnlockFrogCage();
+                GameObject frogTipObj = GameObject.Instantiate(controlTipPrefab, Vector3.forward * 1000, Quaternion.identity);
+                ControlTip frogTip = frogTipObj.GetComponent<ControlTip>();
+                frogTip.message = "E as Frog: launch tongue";
+                frogTip.destroyKey = "e";
             } else if (numberOfKeysCollected == numberOfKeysToFreeCat && !catFree)
             {
                 UnlockCatCage();
+                GameObject catTipObj = GameObject.Instantiate(controlTipPrefab, Vector3.forward * 1000, Quaternion.identity);
+                ControlTip catTip = catTipObj.GetComponent<ControlTip>();
+                catTip.message = "E as Cat: disable soldier from behind";
+                catTip.destroyKey = "e";
             }
         }
     }
