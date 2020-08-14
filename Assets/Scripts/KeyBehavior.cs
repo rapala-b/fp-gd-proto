@@ -35,7 +35,7 @@ public class KeyBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Pet1") || other.gameObject.CompareTag("Pet2") || other.gameObject.CompareTag("Pet2"))
         {
             numberOfKeysCollected++;
             gameObject.GetComponent<Renderer>().enabled = false;

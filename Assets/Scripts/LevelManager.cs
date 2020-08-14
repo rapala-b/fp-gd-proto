@@ -62,7 +62,7 @@ public class LevelManager : MonoBehaviour
         //isFrogFreed = false;
         candiesFoundInLevel = 0;
         candiesInCurrentLevel = GameObject.FindGameObjectsWithTag("Candy").Length;
-        //currentLevel = SceneManager.GetActiveScene().buildIndex;
+        currentLevel = SceneManager.GetActiveScene().buildIndex;
         SetCandyCounterText();
     }
 
@@ -82,6 +82,9 @@ public class LevelManager : MonoBehaviour
             CageButton.cageButtonsPressed = 0;
             PlayerBehavior.status[1] = -1;
         }
+
+        KeyBehavior.numberOfKeysInLevel = 0;
+        KeyBehavior.numberOfKeysCollected = 0;
 
 
         AudioSource.PlayClipAtPoint(levelLostSFX, Camera.main.transform.position);
@@ -108,22 +111,26 @@ public class LevelManager : MonoBehaviour
         candiesFoundInLevel = 0;
         candiesInCurrentLevel = GameObject.FindGameObjectsWithTag("Candy").Length;
 
+        if (currentLevel == 1)
+        {
+            PlayerBehavior.status = new int[]{1, -1, -1, -1}; 
+        }
+
         if (currentLevel == 2)
         {
-            PlayerBehavior.status[1] = 1; //Set elephant to be active
+            PlayerBehavior.status = new int[]{1, 1, -1, -1}; //Set elephant to be active
         }
 
         if (currentLevel == 3)
         {
-            PlayerBehavior.status[1] = 1; //Set elephant to be active
-            PlayerBehavior.status[2] = 1; //Set cat to be active
-            PlayerBehavior.status[3] = 1; //Set frog to be active
+            PlayerBehavior.status = new int[]{1, 1, 1, 1};
         }
     }
 
     void LoadCurrentLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SetLevelVariables();
     }
 
     void LoadNextLevel()

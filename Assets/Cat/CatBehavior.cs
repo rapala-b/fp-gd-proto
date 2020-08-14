@@ -6,6 +6,7 @@ public class CatBehavior : MonoBehaviour
 {
     public float attackRange = 0.5f;
     public Transform catEye;
+    public GameObject nightLight;
     Animator anim;
     CharacterController controller;
 
@@ -21,6 +22,7 @@ public class CatBehavior : MonoBehaviour
     void Update()
     {
         if (PlayerBehavior.activeChar == 2) {
+            nightLight.SetActive(true);
 
             if (Input.GetKeyDown("e"))
             {
@@ -35,6 +37,10 @@ public class CatBehavior : MonoBehaviour
                 anim.SetInteger("animState", 0);
             }
         }
+        else
+        {
+            nightLight.SetActive(false);
+        }
     }
     void Attack() {
        
@@ -42,7 +48,7 @@ public class CatBehavior : MonoBehaviour
         anim.StopPlayback();
         anim.SetInteger("animState", 2);
 
-        foreach (RaycastHit hit in (Physics.SphereCastAll(transform.position + transform.forward, 1, transform.forward))) {
+        foreach (RaycastHit hit in (Physics.SphereCastAll(transform.position + transform.forward * 0.3f, 0.3f, transform.forward))) {
             if(hit.transform.gameObject.GetComponent<EnemyNavMesh>() != null) {
                 Debug.Log("Enemy Hit by cat");
                 hit.transform.gameObject.GetComponent<EnemyNavMesh>().Stun();
