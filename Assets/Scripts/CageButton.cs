@@ -7,8 +7,7 @@ public class CageButton : MonoBehaviour
     public static int pressed = 0;
 
     public AudioClip buttonPressedSFX;
-    
-    [SerializeField] bool done = false;
+    bool done = false;
 
     PlayerBehavior playerBehavior;
     
@@ -28,7 +27,6 @@ public class CageButton : MonoBehaviour
             pressed += 1;
             if (pressed == 3) {
                 GameObject.Destroy(GameObject.FindGameObjectWithTag("Cage"));
-                playerBehavior.canSwitch = true;
             }
         }
     }
