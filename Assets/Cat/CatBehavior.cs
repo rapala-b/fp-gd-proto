@@ -42,6 +42,11 @@ public class CatBehavior : MonoBehaviour
                 anim.SetInteger("animState", 0);
             }
             
+            if (controller.velocity == Vector3.zero)
+            {
+                anim.SetInteger("animState", 0);
+            }
+
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 nightVisionActive = !nightVisionActive;

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6396785686039114449}
   - component: {fileID: 1445280145178146013}
   - component: {fileID: 6446760158623788684}
+  - component: {fileID: 946735531986569917}
   m_Layer: 0
   m_Name: CageKey
   m_TagString: Untagged
@@ -114,3 +115,16 @@ MonoBehaviour:
   controlTipPrefab: {fileID: 9131353796196993950, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
     type: 3}
   numberOfKeysToFreeCat: 4
+--- !u!135 &946735531986569917
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6396785686037087139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0.31444496, y: 3.1387627, z: -0.1601255}
