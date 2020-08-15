@@ -274,7 +274,7 @@ public class EnemyNavMesh : MonoBehaviour
     {
         if (state == 1 || state == 2 || state == 3)
         {
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("Player") & PlayerBehavior.activeChar == 0)
             {
                 playerCaptured = true;
                 anim.SetInteger("animState", 3);
@@ -282,7 +282,7 @@ public class EnemyNavMesh : MonoBehaviour
                 AudioSource.PlayClipAtPoint(playerCapturedSFX, transform.position);
                 Invoke("EndGame", 1.5f);
             }
-            else if (other.CompareTag("Pet1") || other.CompareTag("Pet2") || other.CompareTag("Pet3"))
+            else if (other.CompareTag("Pet1") & PlayerBehavior.activeChar == 1 || other.CompareTag("Pet2") & PlayerBehavior.activeChar == 2 || other.CompareTag("Pet3") & PlayerBehavior.activeChar == 3)
             {
                 pb.Damage(PlayerBehavior.activeChar);
                 AudioSource.PlayClipAtPoint(animalCapturedSFX, transform.position);

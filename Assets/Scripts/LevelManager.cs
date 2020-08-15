@@ -64,6 +64,7 @@ public class LevelManager : MonoBehaviour
         candiesInCurrentLevel = GameObject.FindGameObjectsWithTag("Candy").Length;
         currentLevel = SceneManager.GetActiveScene().buildIndex;
         SetCandyCounterText();
+        SetLevelVariables();
     }
 
     public void LevelLost()
@@ -96,7 +97,7 @@ public class LevelManager : MonoBehaviour
 
     public void LevelBeat()
     {
-        isGameOver = true;
+        isGameOver = true; 
         gameText.text = "LEVEL BEAT";
         gameText.gameObject.SetActive(true);
 

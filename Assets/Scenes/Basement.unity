@@ -127,7 +127,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-284980
+  m_Name: pb_Mesh-237578
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -637,7 +637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 426556, guid: 6bf9d6b9bf8c7432bac2e53f43134d81, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2833657
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 426556, guid: 6bf9d6b9bf8c7432bac2e53f43134d81, type: 3}
       propertyPath: m_LocalPosition.z
@@ -661,7 +661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 426556, guid: 6bf9d6b9bf8c7432bac2e53f43134d81, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 426556, guid: 6bf9d6b9bf8c7432bac2e53f43134d81, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -758,6 +758,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d323fc18d7f7cbb4d971d8250d723165, type: 3}
+--- !u!1 &103653132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1502818402513928, guid: d323fc18d7f7cbb4d971d8250d723165,
+    type: 3}
+  m_PrefabInstance: {fileID: 103653131}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &103653133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103653132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: It's the rest of my toys!  The soldiers were gonna throw them in the
+    furnace!
 --- !u!1 &123782173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4721704091120278357, guid: 7c744cb8ada44f9479cb674b15ee6245,
@@ -835,13 +855,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e082979a473bb914ab8af10a5d754993, type: 3}
+--- !u!1 &151587917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1681651414697798, guid: e082979a473bb914ab8af10a5d754993,
+    type: 3}
+  m_PrefabInstance: {fileID: 151587916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &151587918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151587917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: These crates are blocking the door!
 --- !u!43 &164592397
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-284964
+  m_Name: pb_Mesh-237562
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1204,13 +1243,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4941dfa9146ec4247801bfca23379626, type: 3}
+--- !u!1 &263885523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1189123570260590, guid: 4941dfa9146ec4247801bfca23379626,
+    type: 3}
+  m_PrefabInstance: {fileID: 263885522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &263885524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263885523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: It's the rest of my toys!  The soldiers were gonna throw them in the
+    furnace!
 --- !u!43 &327985339
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-285060
+  m_Name: pb_Mesh-237662
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1432,6 +1491,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e082979a473bb914ab8af10a5d754993, type: 3}
+--- !u!1 &405480571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1681651414697798, guid: e082979a473bb914ab8af10a5d754993,
+    type: 3}
+  m_PrefabInstance: {fileID: 405480570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &405480572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405480571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: These crates are blocking the door!
 --- !u!1001 &415532054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1665,6 +1743,90 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 540045115}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &553852841
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2110826031}
+    m_Modifications:
+    - target: {fileID: 667682467356647271, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: message
+      value: 'Press E as Frog: Activate Lights'
+      objectReference: {fileID: 0}
+    - target: {fileID: 667682467356647271, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: destroyKey
+      value: e
+      objectReference: {fileID: 0}
+    - target: {fileID: 667682467356647271, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: range
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9131353796196993950, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_Name
+      value: ControlTip
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb1762169ee0eba41b71cf0c5cda3d0d, type: 3}
 --- !u!1001 &570143106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1801,7 +1963,7 @@ PrefabInstance:
     - target: {fileID: 5236971388967202581, guid: 9cc728362181d134aa4e3e6b751febec,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5236971388967202581, guid: 9cc728362181d134aa4e3e6b751febec,
         type: 3}
@@ -1828,6 +1990,11 @@ PrefabInstance:
       propertyPath: candyCountText
       value: 
       objectReference: {fileID: 1078091102}
+    - target: {fileID: 5236971388967202582, guid: 9cc728362181d134aa4e3e6b751febec,
+        type: 3}
+      propertyPath: nextLevel
+      value: Main Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 5236971388967202583, guid: 9cc728362181d134aa4e3e6b751febec,
         type: 3}
       propertyPath: m_Name
@@ -2031,98 +2198,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e082979a473bb914ab8af10a5d754993, type: 3}
---- !u!1 &713550753
+--- !u!1 &689253615 stripped
 GameObject:
+  m_CorrespondingSourceObject: {fileID: 1681651414697798, guid: e082979a473bb914ab8af10a5d754993,
+    type: 3}
+  m_PrefabInstance: {fileID: 689253614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &689253616
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 713550755}
-  - component: {fileID: 713550754}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &713550754
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713550753}
+  m_GameObject: {fileID: 689253615}
   m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &713550755
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713550753}
-  m_LocalRotation: {x: 0.25766814, y: 0.37728548, z: -0.17299628, w: 0.8725452}
-  m_LocalPosition: {x: 37, y: -162, z: 361}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 35.464, y: 44.339, z: -7.5820003}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: These crates are blocking the door!
 --- !u!1001 &722657209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2344,6 +2438,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da4ad2310c6a3a44e8c6b74c731ffbc7, type: 3}
+--- !u!1 &729411654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1511746606845076, guid: da4ad2310c6a3a44e8c6b74c731ffbc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 729411653}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &729411655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729411654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: It's the rest of my toys!  The soldiers were gonna throw them in the
+    furnace!
 --- !u!4 &772782770 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5049820040925239020, guid: b64365bdf4b56b54296080b5ee9e68fb,
@@ -2542,7 +2656,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-284938
+  m_Name: pb_Mesh-237536
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2838,7 +2952,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-284944
+  m_Name: pb_Mesh-237542
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3066,6 +3180,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3380572, guid: 3b00f23c34eabed4497bb67f12d26fa2, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b00f23c34eabed4497bb67f12d26fa2, type: 3}
 --- !u!4 &999717488 stripped
@@ -3126,6 +3244,98 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1862027860}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1042641981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1042641982}
+  - component: {fileID: 1042641983}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1042641982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042641981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.96, y: -0.84, z: -9.34}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1607432569}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!108 &1042641983
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042641981}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 1
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &1078091102 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 223678242527311115, guid: 757e3aea8e4f1f241a65c3c57cc388b2,
@@ -3138,6 +3348,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1079293353
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 667682467356647271, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: message
+      value: 'Press Q as Cat: toggle night vision'
+      objectReference: {fileID: 0}
+    - target: {fileID: 667682467356647271, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: destroyKey
+      value: q
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.7045217
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245528942792419742, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9131353796196993950, guid: fb1762169ee0eba41b71cf0c5cda3d0d,
+        type: 3}
+      propertyPath: m_Name
+      value: ControlTip
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb1762169ee0eba41b71cf0c5cda3d0d, type: 3}
 --- !u!4 &1080501458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 695721934696091755, guid: b64365bdf4b56b54296080b5ee9e68fb,
@@ -3210,7 +3499,7 @@ PrefabInstance:
     - target: {fileID: 1942109175631697259, guid: 757e3aea8e4f1f241a65c3c57cc388b2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1942109175631697259, guid: 757e3aea8e4f1f241a65c3c57cc388b2,
         type: 3}
@@ -3348,6 +3637,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f1a91f0bb3d8d3429a91e85f923157c, type: 3}
+--- !u!1 &1250533303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1268163357404018, guid: 0f1a91f0bb3d8d3429a91e85f923157c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1250533302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1250533304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250533303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: It's the rest of my toys!  The soldiers were gonna throw them in the
+    furnace!
 --- !u!1001 &1332971793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3394,6 +3703,10 @@ PrefabInstance:
     - target: {fileID: 54160261, guid: d8c94530d545c7549b061c738820d86e, type: 3}
       propertyPath: patrolPoints.Array.data[2].z
       value: -8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 597943877, guid: d8c94530d545c7549b061c738820d86e, type: 3}
+      propertyPath: m_TagString
+      value: Respawn
       objectReference: {fileID: 0}
     - target: {fileID: 7518271033931636136, guid: d8c94530d545c7549b061c738820d86e,
         type: 3}
@@ -3497,7 +3810,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-285058
+  m_Name: pb_Mesh-237660
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3699,7 +4012,7 @@ PrefabInstance:
     - target: {fileID: 8884222834009402218, guid: 06cc1063b9fd06d4b9559517e3bc42ca,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8884222834009402218, guid: 06cc1063b9fd06d4b9559517e3bc42ca,
         type: 3}
@@ -4045,6 +4358,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1533130315}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1607432569 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 695721933749330560, guid: b64365bdf4b56b54296080b5ee9e68fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 695721935029451485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1634294848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4095,7 +4414,7 @@ PrefabInstance:
     - target: {fileID: 3875221204177132856, guid: e4beddc6489b31743a4ff6251c8689ff,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3875221204177132856, guid: e4beddc6489b31743a4ff6251c8689ff,
         type: 3}
@@ -4303,6 +4622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1857516476}
+  - component: {fileID: 1857516477}
   m_Layer: 0
   m_Name: Pipes
   m_TagString: Untagged
@@ -4330,6 +4650,19 @@ Transform:
   m_Father: {fileID: 772782770}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1857516477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857516475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: These pipes look rusty. Elephant could get water from here!
 --- !u!1001 &1862027860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4544,7 +4877,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-284948
+  m_Name: pb_Mesh-237546
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4845,12 +5178,12 @@ PrefabInstance:
     - target: {fileID: 2810138911143035337, guid: 0d4c9b0f27094d84899d6ca7d182843c,
         type: 3}
       propertyPath: minVertical
-      value: -10
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 2810138911143035337, guid: 0d4c9b0f27094d84899d6ca7d182843c,
         type: 3}
       propertyPath: maxVertical
-      value: 60
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2810138911143035341, guid: 0d4c9b0f27094d84899d6ca7d182843c,
         type: 3}
@@ -4890,7 +5223,7 @@ PrefabInstance:
     - target: {fileID: 2810138911143035341, guid: 0d4c9b0f27094d84899d6ca7d182843c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2810138911143035341, guid: 0d4c9b0f27094d84899d6ca7d182843c,
         type: 3}
@@ -4909,6 +5242,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d4c9b0f27094d84899d6ca7d182843c, type: 3}
+--- !u!1 &1992037776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8488657973979001112, guid: b64365bdf4b56b54296080b5ee9e68fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 695721935029451485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1992037777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992037776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: What's that sound?  There's something terrible behind this door...
 --- !u!1001 &2040034237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5002,6 +5354,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367eef2ed2b25d4468ca05d11b656682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2110826031 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 426556, guid: 6bf9d6b9bf8c7432bac2e53f43134d81,
+    type: 3}
+  m_PrefabInstance: {fileID: 78279372}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &2110826032
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5010,11 +5368,24 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110826029}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.24, z: 0.11}
+  m_Size: {x: 0.18, y: 0.24, z: 0.4}
   m_Center: {x: 0.00000023841858, y: -0.000000059604645, z: 0}
+--- !u!114 &2110826033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110826029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: '"That''s the light switch!  Only Frog can jump that high!'
 --- !u!1001 &695721935029451485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5030,7 +5401,17 @@ PrefabInstance:
     - target: {fileID: 61598340783219596, guid: b64365bdf4b56b54296080b5ee9e68fb,
         type: 3}
       propertyPath: m_Size.z
-      value: 1.14
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 61598340783219596, guid: b64365bdf4b56b54296080b5ee9e68fb,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 61598340783219596, guid: b64365bdf4b56b54296080b5ee9e68fb,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 94823763126292059, guid: b64365bdf4b56b54296080b5ee9e68fb,
         type: 3}
@@ -8165,7 +8546,7 @@ PrefabInstance:
     - target: {fileID: 5579813168353767817, guid: b64365bdf4b56b54296080b5ee9e68fb,
         type: 3}
       propertyPath: m_Size.z
-      value: 1.14
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5579813168353767821, guid: b64365bdf4b56b54296080b5ee9e68fb,
         type: 3}
@@ -8235,7 +8616,7 @@ PrefabInstance:
     - target: {fileID: 7330042888129462891, guid: b64365bdf4b56b54296080b5ee9e68fb,
         type: 3}
       propertyPath: m_Size.z
-      value: 1.14
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7330042888129462895, guid: b64365bdf4b56b54296080b5ee9e68fb,
         type: 3}
@@ -8309,3 +8690,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b64365bdf4b56b54296080b5ee9e68fb, type: 3}
+--- !u!1 &695721935029451486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3106524990246883234, guid: b64365bdf4b56b54296080b5ee9e68fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 695721935029451485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &695721935029451487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695721935029451486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: The furnace looks like it's alive.  Is this what's causing this nightmare?
+--- !u!1 &695721935029451488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3505231554907891216, guid: b64365bdf4b56b54296080b5ee9e68fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 695721935029451485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &695721935029451489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695721935029451488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbe136ea98d97d4cb5a220cbb1c65be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: This fire is blocking the way!  But where could I find water to put
+    it out?

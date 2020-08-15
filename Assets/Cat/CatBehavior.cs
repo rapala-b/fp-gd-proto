@@ -11,7 +11,7 @@ public class CatBehavior : MonoBehaviour
 
     Animator anim;
     CharacterController controller;
-    bool nightVisionActive = true;
+    bool nightVisionActive = false;
 
     // Start is called before the first frame update
     void Start()

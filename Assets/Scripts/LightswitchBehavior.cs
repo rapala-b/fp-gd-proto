@@ -14,6 +14,7 @@ public class LightswitchBehavior : MonoBehaviour
         Debug.Log("Number of Lights: " + (lights.Length - 1));
         foreach (Light light in lights)
         {
+            if (light.tag != "Respawn")
             light.intensity = 0;
         }
     }

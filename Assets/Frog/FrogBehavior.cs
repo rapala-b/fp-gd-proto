@@ -48,9 +48,8 @@ public class FrogBehavior : MonoBehaviour
     }
 
     void Tongue() {
-        
-        RaycastHit hit;
-        if(Physics.Raycast(tonguePosition.position, tonguePosition.forward, out hit, 2f)) {
+        foreach (RaycastHit hit in (Physics.SphereCastAll(transform.position + transform.forward * 0.5f, 0.5f, transform.forward))) 
+        {
             if(hit.rigidbody != null) {
                 hit.rigidbody.AddForce((transform.position - hit.transform.position)  * 200);
             }
