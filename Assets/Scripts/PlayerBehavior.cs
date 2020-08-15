@@ -14,7 +14,6 @@ public class PlayerBehavior : MonoBehaviour
     public int[] status = {1, 0};
     public int activeChar = 0;
     public GameObject[] chars = {null, null};
-    public bool canSwitch = false;
 
     PlayerCamera playerCamera;
 
@@ -38,8 +37,8 @@ public class PlayerBehavior : MonoBehaviour
      void Update()
     {
         // only toggles between 0 and 1 for now
-        if (Input.GetKeyDown("f") & canSwitch) { SwitchControl((activeChar + 1) % 2); }
-        if (Input.GetKeyDown("r") & canSwitch) { Recall(); }
+        if (Input.GetKeyDown("f")) { SwitchControl((activeChar + 1) % 2); }
+        if (Input.GetKeyDown("r")) { Recall(); }
 
         float moveHorizontal = Input.GetAxis("Horizontal") * Time.deltaTime;
         float moveVertical = Input.GetAxis("Vertical") * Time.deltaTime;
@@ -64,10 +63,6 @@ public class PlayerBehavior : MonoBehaviour
         }
         moveVector.y -= gravity * Time.deltaTime;
 
-        if (Mathf.Abs(moveVector.x) + Mathf.Abs(moveVector.z) > 0.1f){
-            controller.transform.LookAt(new Vector3(transform.position.x + moveVector.x, transform.position.y, transform.position.z + moveVector.z));
-        }
-            
         controller.Move(moveVector * Time.deltaTime);
     }
 
@@ -78,7 +73,7 @@ public class PlayerBehavior : MonoBehaviour
             if (status[target] == 0) 
             { 
                 status[target] = 1; 
-                chars[target].transform.position = chars[activeChar].transform.position + 0.1f * chars[activeChar].transform.forward;
+                chars[target].transform.position = chars[activeChar].transform.position + 2 * chars[activeChar].transform.forward;
                 chars[target].SetActive(true);
             }
             playerCamera.focus = chars[target].transform;

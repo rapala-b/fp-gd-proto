@@ -6,7 +6,6 @@ public class CageButton : MonoBehaviour
 {
     public static int pressed = 0;
 
-    public AudioClip buttonPressedSFX;
     bool done = false;
 
     PlayerBehavior playerBehavior;
@@ -21,8 +20,7 @@ public class CageButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("e") & playerBehavior.activeChar == 0 & !done & (playerBehavior.chars[playerBehavior.activeChar].transform.position - transform.position).magnitude < 3){
-            AudioSource.PlayClipAtPoint(buttonPressedSFX, transform.position);
+        if (Input.GetKeyDown("e") & playerBehavior.activeChar == 1 & !done & (playerBehavior.chars[playerBehavior.activeChar].transform.position - transform.position).magnitude < 3){
             done = true;
             pressed += 1;
             if (pressed == 3) {
