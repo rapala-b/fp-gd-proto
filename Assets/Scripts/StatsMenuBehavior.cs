@@ -20,7 +20,7 @@ public class StatsMenuBehavior : MonoBehaviour
            + PlayerPrefs.GetInt("levelTwoCandy").ToString();
         candyThree.text = "Level 3 Candy: " + PlayerPrefs.GetInt("levelThreeCandyFound").ToString() + "/"
            + PlayerPrefs.GetInt("levelThreeCandy").ToString();
-        candyTotal.text = "Total Candy: " + PlayerPrefs.GetInt("levelOneCandyFound").ToString() + "/"
+        candyTotal.text = "Total Candy Found: " + (PlayerPrefs.GetInt("levelOneCandyFound") + PlayerPrefs.GetInt("levelTwoCandyFound") + PlayerPrefs.GetInt("levelThreeCandyFound")).ToString() + "/"
            + (PlayerPrefs.GetInt("levelOneCandy") + PlayerPrefs.GetInt("levelTwoCandy") + PlayerPrefs.GetInt("levelThreeCandy")).ToString();
     }
 
