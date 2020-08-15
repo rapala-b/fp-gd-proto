@@ -29,6 +29,7 @@ public class LightswitchBehavior : MonoBehaviour
     {
         foreach (Light light in lights)
         {
+            if (light.tag != "Respawn")
             light.intensity = 1;
         }
     }
