@@ -56,6 +56,7 @@ public class ElephantBehavior : MonoBehaviour
        
         if (hit.gameObject.CompareTag("Box")) {
             Destroy(hit.gameObject);
+            AudioSource.PlayClipAtPoint(breakSound, transform.position);
         }
 
         if (hit.gameObject.CompareTag("Pipe"))

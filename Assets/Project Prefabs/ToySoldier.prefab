@@ -329,6 +329,7 @@ MonoBehaviour:
   - {x: 6, y: 1.7, z: -5.43}
   alertSound: {fileID: 8300000, guid: efcf29c536d89ff478dbc04367b84e2d, type: 3}
   playerCapturedSFX: {fileID: 8300000, guid: b3fcad6884630204eaad03c22907bd0d, type: 3}
+  animalCapturedSFX: {fileID: 8300000, guid: 3d15edb126ec57c42817d894396b63c7, type: 3}
   enemyEyes: {fileID: 72747421978095052}
   viewRange: 2.5
   viewAngle: 100
