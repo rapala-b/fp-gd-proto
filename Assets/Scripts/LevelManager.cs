@@ -104,6 +104,26 @@ public class LevelManager : MonoBehaviour
         // Update Game Variables
         totalCandiesFound += candiesFoundInLevel;
 
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                // main menu, do nothing
+                break;
+            case 1:
+                PlayerPrefs.SetInt("levelOneCandyFound", candiesFoundInLevel);
+                PlayerPrefs.SetInt("levelOneCandy", candiesInCurrentLevel);
+                break;
+            case 2:
+                PlayerPrefs.SetInt("levelTwoCandyFound", candiesFoundInLevel);
+                PlayerPrefs.SetInt("levelTwoCandy", candiesInCurrentLevel);
+                break;
+            case 3:
+                PlayerPrefs.SetInt("levelThreeCandyFound", candiesFoundInLevel);
+                PlayerPrefs.SetInt("levelThreeCandy", candiesInCurrentLevel);
+                PlayerPrefs.SetInt("totalCandyFound", totalCandiesFound);
+                break;
+        }
+
         AudioSource.PlayClipAtPoint(levelBeatSFX, Camera.main.transform.position);
 
         Invoke("LoadNextLevel", levelLoadDuration);
